@@ -1,16 +1,34 @@
-@import url('https://fonts.googleapis.com/css2?family=Alegreya:wght@400;500;700;800;900&family=Lora:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Alegreya:wght@400;500;700;800;900&family=Lora:wght@400;500;600;700&display=swap");
 
 .overflow-wrap {
     overflow-x: hidden;
 }
 
+#home-page {
+    align-items: center;
+}
+
 .home-background {
     position: absolute;
     left: 0;
-    right: 0;
+    top: 0;
     background-image: url(../images/movie-projector.jpg);
     background-size: cover;
     background-position: center;
-    width: 100%;
-    height: 100;
+    width: 100vw;
+    height: 100%;
+}
+
+.navbar-dark {
+}
+
+.home-text {
+    justify-content: center;
+    align-items: center;
+}
+
+.home-text h1 {
+    font-family: "Lora", sans-serif;
+    font-size: 100px;
+    color: #de4c4c;
 }
