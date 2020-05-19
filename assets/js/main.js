@@ -21,8 +21,8 @@ function getMovies(query) {
                     <div class="col-md-4 col-lg-3">
                         <div class="movie-card text-center">
                             <img src="${movie.Poster}"/>     
-                            <h4>${movie.Title}</h4>
-                            <a onclick="selectedMovie('${movie.imdbID}')" class="btn btn-primary" href="#" data-toggle="modal" data-target="#movieModal">Movie Details</a>
+                            <h4 class="white" >${movie.Title}</h4>
+                            <a onclick="selectedMovie('${movie.imdbID}')" class="movie-details-button hvr-shutter-out-horizontal red" href="#" data-toggle="modal" data-target="#movieModal">Movie Details</a>
                         </div>
                     </div>
                 `;
@@ -87,3 +87,36 @@ function getMovie() {
             console.log(error);
         });
 }
+
+jQuery(document).ready(function () {
+    var toTop = $(".to-top-btn");
+
+    toTop.on("click", function (event) {
+        event.preventDefault();
+        $("html, body").animate({ scrollTop: 0 }, 1000);
+    });
+
+    var bufferBtn = $("#to-buffer-btn");
+
+    bufferBtn.on("click", function (event) {
+        event.preventDefault();
+        $("html, body").animate(
+            {
+                scrollTop: $("#buffer-page").offset().top,
+            },
+            1000
+        );
+    });
+
+    var movieBtn = $("#to-movie-btn");
+
+    movieBtn.on("click", function (event) {
+        event.preventDefault();
+        $("html, body").animate(
+            {
+                scrollTop: $("#movie-search").offset().top,
+            },
+            1000
+        );
+    });
+});

@@ -20,15 +20,13 @@
         <link rel="stylesheet" href="assets/css/style.css" />
         <title>Title</title>
     </head>
-    <body id="page-top">
+    <body>
         <nav
-            class="navbar navbar-expand-md navbar-dark fixed-top scrolling-navbar"
+            class="navbar navbar-expand-md navbar-dark nav-background fixed-top scrolling-navbar"
             id="mainNav"
         >
             <div class="container">
-                <a href="#page-top" class="navbar-brand js-scroll-trigger"
-                    >Home</a
-                >
+                <a href="#" class="navbar-brand to-top-btn hvr-grow">home</a>
                 <button
                     class="navbar-toggler"
                     type="button"
@@ -36,23 +34,28 @@
                     data-target="#navbarResponsive"
                     aria-controls="navbarResponsive"
                 >
-                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"
+                        ><i class="fas fa-bars"></i
+                    ></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav">
                         <li>
-                            <a class="nav-link js-scroll-trigger" href="#"
+                            <a
+                                id="to-movie-btn"
+                                class="nav-link hvr-grow"
+                                href="#movie-search"
                                 >Movies</a
                             >
                         </li>
                         <li>
-                            <a class="nav-link js-scroll-trigger" href="#"
-                                >Top Rated</a
+                            <a class="nav-link hvr-grow" href="#actor-search"
+                                >People</a
                             >
                         </li>
                         <li>
-                            <a class="nav-link js-scroll-trigger" href="#"
-                                >Actors</a
+                            <a class="nav-link hvr-grow" href="#top-rated"
+                                >Top Rated</a
                             >
                         </li>
                     </ul>
@@ -62,11 +65,12 @@
 
         <header class="intro-page">
             <div class="container d-flex home-background">
-                <div class="col-12 home-text">
+                <div class="col-12 home-text red">
                     <h1>JMDb</h1>
                     <a
+                        id="to-buffer-btn"
                         href="#"
-                        class="home-button hvr-bounce-to-bottom hvr-icon-down"
+                        class="home-button hvr-bounce-to-bottom hvr-icon-down red"
                         >come explore<i
                             class="fas fa-chevron-circle-down hvr-icon"
                         ></i
@@ -81,9 +85,9 @@
             <div class="row">
                 <div class="container">
                     <div class="col-12 col-md-3">
-                        <h2>Discover...</h2>
+                        <h2 class="white">Discover...</h2>
                         <h2 class="red">Learn...</h2>
-                        <h2>Indulge...</h2>
+                        <h2 class="white">Indulge...</h2>
                     </div>
                 </div>
 
@@ -95,7 +99,7 @@
             </div>
         </section>
 
-        <section id="about">
+        <section id="movie-search">
             <div class="top-line"></div>
 
             <div class="container">

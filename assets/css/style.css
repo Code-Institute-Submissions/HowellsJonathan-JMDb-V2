@@ -1,6 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Alegreya:wght@400;500;700;800;900&family=Lora:wght@400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
 
+/* Sitewide / big containers */
+
+html {
+    box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -9,6 +20,70 @@
 .overflow-wrap {
     overflow-x: hidden;
 }
+
+.top-line {
+    width: 100%;
+    height: 3vh;
+    background-color: #de4c4c;
+    margin-bottom: 30px;
+}
+
+/* Colors */
+
+.red {
+    color: #de4c4c;
+}
+
+.white {
+    color: #fff;
+}
+
+/* Bootstrap Navbar */
+
+nav {
+    font-family: "Lora", sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.navbar-dark .navbar-brand {
+    color: #fff;
+}
+
+.navbar-dark .navbar-brand:hover {
+    color: #de4c4c;
+    transition: ease-in 0.3s;
+}
+
+.nav-background {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.navbar-dark .navbar-toggler {
+    border: none;
+    color: #fff;
+    font-size: 25px;
+}
+
+.navbar-dark .navbar-toggler:hover {
+    color: #de4c4c;
+    transition: ease-in 0.3s;
+}
+
+.navbar-toggler-icon {
+    display: inline;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #fff;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #de4c4c;
+    transition: ease-in 0.3s;
+}
+
+/* Landing page */
 
 #intro-page {
     align-items: center;
@@ -31,14 +106,9 @@ header {
     text-align: center;
 }
 
-.navbar-dark {
-    color: #de4c4c;
-}
-
 .home-text h1 {
     font-family: "Lora", sans-serif;
     font-size: 100px;
-    color: #de4c4c;
 }
 
 .home-button i {
@@ -50,7 +120,6 @@ header {
     margin: 20px 0 0 0;
     padding: 10px 20px;
     border: 3px solid #de4c4c;
-    color: #de4c4c;
     text-decoration: none;
     text-transform: uppercase;
     font-family: "Lora", sans-serif;
@@ -66,11 +135,34 @@ header {
     background: #de4c4c;
 }
 
-#about {
+/* Buffer page */
+
+#buffer-page {
+    background-color: #080b0c;
+    text-align: center;
+}
+
+#buffer-page .container {
+    margin-bottom: 30px;
+}
+
+#buffer-page img {
+    float: right;
+    width: 250px;
+}
+
+#buffer-page div h2 {
+    font-family: "Lora", sans-serif;
+    font-size: 50px;
+}
+
+/* Search for movie page */
+
+#movie-search {
     background-color: #080b0c;
 }
 
-#about .jumbotron {
+#movie-search .jumbotron {
     text-align: center;
 }
 
@@ -92,13 +184,6 @@ header {
     margin-bottom: 10px;
 }
 
-.top-line {
-    width: 100%;
-    height: 3vh;
-    background-color: #de4c4c;
-    margin-bottom: 30px;
-}
-
 .movie-card {
     font-family: "Lora", sans-serif;
     font-weight: 700;
@@ -108,30 +193,26 @@ header {
 .movie-card h4 {
     font-size: 30px;
     font-weight: 600;
-    color: #fff;
 }
 
-#buffer-page {
-    background-color: #080b0c;
-    text-align: center;
+.movie-details-button {
+    background-color: transparent;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    border: 1px solid #de4c4c;
+    padding: 7px 10px;
 }
 
-#buffer-page .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.movie-details-button:hover {
+    text-decoration: none;
 }
 
-#buffer-page img {
-    float: right;
-    width: 250px;
+.movie-details-button:before {
+    background: #de4c4c;
 }
 
-#buffer-page div h2 {
-    color: #fff;
-    font-family: "Lora", sans-serif;
-    font-size: 50px;
-}
+/* Media queries */
 
 @media only screen and (min-width: 375px) {
     #buffer-page div h2 {
