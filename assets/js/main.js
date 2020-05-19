@@ -12,19 +12,17 @@ $(document).ready(function () {
 });
 
 function getMovies(query) {
-    axios
-        .get(`${movieApi.base}?s=${query}&apikey=${movieApi.key}`)
+    $.getJSON(`${movieApi.base}?s=${query}&apikey=${movieApi.key}`)
         .then(function (response) {
-            console.log(response);
-            let movies = response.data.Search;
+            let movies = response.Search;
             let output = "";
             $.each(movies, function (index, movie) {
                 output += `
-                    <div class="col-md-3">
-                        <div class="well text-center">
+                    <div class="col-md-4 col-lg-3">
+                        <div class="movie-card text-center">
                             <img src="${movie.Poster}"/>     
                             <h4>${movie.Title}</h4>
-                            <a onclick="selectedMovie("${movie.imdbID}")" class="btn btn-primary" href="#">Movie Details</a>
+                            <a onclick="selectedMovie('${movie.imdbID}')" class="btn btn-primary" href="#" data-toggle="modal" data-target="#movieModal">Movie Details</a>
                         </div>
                     </div>
                 `;
@@ -37,12 +35,55 @@ function getMovies(query) {
         });
 }
 
-// function getMovies(query) {
-//     $.getJSON(`http://www.omdbapi.com/?s=${query}&apikey=7506dcc9`)
-//         .then(function (response) {
-//             console.log(response);
-//         })
-//         .catch(function (error) {
-//             console.log(error);
-//         });
-// }
+function selectedMovie(id) {
+    $.when(sessionStorage.setItem("movieId", id)).then(getMovie);
+}
+
+function getMovie() {
+    let movieId = sessionStorage.getItem("movieId");
+
+    $.getJSON(`${movieApi.base}?i=${movieId}&apikey=${movieApi.key}`)
+        .then(function (response) {
+            let movie = response;
+
+            $("#movieModalTitle").html(movie.Title);
+
+            $(".modal-body").html(`
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <strong>Genre:</strong> ${movie.Genre}
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Released:</strong> ${movie.Released}
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Rated:</strong> ${movie.Rated}
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Runtime:</strong> ${movie.Runtime}
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Actors:</strong> ${movie.Actors}
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Director:</strong> ${movie.Director}
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Writer:</strong> ${movie.Writer}
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Plot:</strong> ${movie.Plot}
+                    </li>
+                    <li class="list-group-item">
+                        <strong>IMDb Rating:</strong> ${movie.imdbRating}
+                    </li>
+                    <li class="list-group-item">
+                        <a href="http://imdb.com/title/${movie.imdbID}" target="_blank">View on IMDb</a>
+                    </li>
+                </ul>
+                `);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+}
