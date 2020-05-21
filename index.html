@@ -17,10 +17,16 @@
             href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css"
             type="text/css"
         />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+        />
         <link rel="stylesheet" href="assets/css/style.css" />
         <title>Title</title>
     </head>
     <body>
+        <!-- Navigation -->
         <nav
             class="navbar navbar-expand-md navbar-dark nav-background fixed-top scrolling-navbar"
             id="mainNav"
@@ -63,6 +69,7 @@
             </div>
         </nav>
 
+        <!-- Landing Page -->
         <header class="intro-page">
             <div class="container d-flex home-background">
                 <div class="col-12 home-text red">
@@ -75,7 +82,8 @@
             </div>
         </header>
 
-        <section class="search-sect">
+        <!-- Movie search section -->
+        <section class="search-sect dark-bg">
             <div class="top-line"></div>
 
             <div class="container">
@@ -105,7 +113,8 @@
             </div>
         </section>
 
-        <section class="search-sect">
+        <!-- People search section -->
+        <section class="search-sect dark-bg">
             <div class="top-line"></div>
 
             <div class="container">
@@ -135,6 +144,37 @@
             </div>
         </section>
 
+        <!-- Seperater page -->
+        <section id="buffer-page" class="dark-bg">
+            <div class="top-line"></div>
+
+            <div class="row">
+                <div class="container">
+                    <div class="col-12 col-md-3">
+                        <h2 class="white">Discover...</h2>
+                        <h2 class="red">Learn...</h2>
+                        <h2 class="white">Indulge...</h2>
+                    </div>
+                </div>
+
+                <img
+                    class="d-none d-md-block col-md-9"
+                    src="assets/images/action.jpg"
+                    alt="Director using clapperboard"
+                />
+            </div>
+        </section>
+
+        <!-- Top Rated section -->
+        <section id="top-rated-section" class="dark-bg">
+            <div class="top-line"></div>
+
+            <div class="container">
+                <div id="top-rated" class="row"></div>
+            </div>
+        </section>
+
+        <!-- Modal html for use across the webpage -->
         <div
             class="modal fade"
             id="modal"
@@ -179,6 +219,11 @@
         ></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
-        <script src="assets/js/main.js" type="text/javascript"></script>
+        <script
+            type="text/javascript"
+            src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+        ></script>
+        <script src="assets/js/search.js" type="text/javascript"></script>
+        <script src="assets/js/top-rated.js" type="text/javascript"></script>
     </body>
 </html>

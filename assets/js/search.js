@@ -159,6 +159,8 @@ function collapsePeople() {
     $(".collapse-button-p").toggleClass("flip");
 }
 
+/* Get extra details about actor or actress based off of stored id from the search JSON data */
+
 function selectedPerson(id) {
     $.when(sessionStorage.setItem("personId", id)).then(getPerson);
 }
@@ -198,6 +200,33 @@ function getPerson() {
             console.log(error);
         });
 }
+
+/* Top rated section */
+
+const trendingApi = {
+    key: "dbf7a083d0697d1c9a00cdd04a37af37",
+    base: "https://api.themoviedb.org/3/trending/",
+};
+
+function getTopRatedMovies() {
+    $.getJSON(`${trendingApi.base}movie/week?api_key=${trendingApi.key}`).then(
+        function (response) {
+            console.log(response);
+            let trendingMovie = response.results;
+            let output = "";
+
+            $.each(trendingMovie, function (index, movie) {
+                output += `
+                    <div class="col-6 col-md-4 col-lg-3" >
+                    
+                    </div>
+                `;
+            });
+        }
+    );
+}
+
+$(document).ready(getTopRatedMovies());
 
 /* Buttons */
 

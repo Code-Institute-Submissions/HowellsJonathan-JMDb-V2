@@ -39,6 +39,10 @@ html {
     color: #fff;
 }
 
+.dark-bg {
+    background-color: #080b0c;
+}
+
 /* Bootstrap Navbar */
 
 nav {
@@ -98,7 +102,6 @@ header {
     left: 0;
     top: 0;
     background-image: url(../images/movie-projector.jpg);
-    background-color: #080b0c;
     background-size: cover;
     background-position: center;
     width: 100vw;
@@ -124,31 +127,7 @@ header {
     font-weight: 700;
 }
 
-/* Buffer page */
-
-#buffer-page {
-    background-color: #080b0c;
-    text-align: center;
-}
-
-#buffer-page .container {
-    margin-bottom: 30px;
-}
-
-#buffer-page img {
-    float: right;
-    width: 250px;
-}
-
-#buffer-page div h2 {
-    font-size: 50px;
-}
-
 /* Search for pages */
-
-.search-sect {
-    background-color: #080b0c;
-}
 
 .search-sect {
     text-align: center;
@@ -212,6 +191,26 @@ header {
 .flip {
     transform: rotate(-180deg);
     transition: 0.5s ease-in;
+}
+
+/* Buffer page */
+
+#buffer-page {
+    background-color: #080b0c;
+    text-align: center;
+}
+
+#buffer-page .container {
+    margin-bottom: 30px;
+}
+
+#buffer-page img {
+    float: right;
+    width: 250px;
+}
+
+#buffer-page div h2 {
+    font-size: 50px;
 }
 
 /* Media queries */
