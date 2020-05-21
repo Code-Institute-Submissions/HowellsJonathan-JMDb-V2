@@ -141,50 +141,39 @@ header {
 }
 
 #buffer-page div h2 {
-    font-family: "Lora", sans-serif;
     font-size: 50px;
 }
 
-/* Search for movie page */
+/* Search for pages */
 
-#movie-search {
+.search-sect {
     background-color: #080b0c;
 }
 
-#movie-search .jumbotron {
+.search-sect .jumbotron {
     text-align: center;
 }
 
 #movies img,
-#movie img {
+#people img {
     width: 70%;
     margin-bottom: 20px;
-}
-
-#movies .col-md-3 .movie-card {
-    height: 450px;
-}
-
-#movies .col-md-3 img {
     height: 300px;
 }
 
-#movies h4 {
-    margin-bottom: 10px;
-}
-
-.movie-card {
-    font-family: "Lora", sans-serif;
+.search-card {
+    height: 450px;
     font-weight: 700;
     margin-bottom: 20px;
 }
 
-.movie-card h4 {
+.search-card h4 {
+    margin-bottom: 10px;
     font-size: 30px;
     font-weight: 600;
 }
 
-.movie-details-button {
+.details-button {
     background-color: transparent;
     text-transform: uppercase;
     cursor: pointer;
@@ -193,12 +182,22 @@ header {
     padding: 7px 10px;
 }
 
-.movie-details-button:hover {
+.details-button:hover {
     text-decoration: none;
 }
 
-.movie-details-button:before {
+.details-button:before {
     background: #de4c4c;
+}
+
+.collapse-button {
+    background-color: #de4c4c;
+    position: fixed;
+    right: 0.8em;
+    bottom: 0.8em;
+    height: 3em;
+    width: 3em;
+    z-index: 1000;
 }
 
 /* Media queries */

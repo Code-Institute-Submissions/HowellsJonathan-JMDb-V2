@@ -1,11 +1,13 @@
+/* Movie Searching Method */
+
 const movieApi = {
     key: "7506dcc9",
     base: "http://www.omdbapi.com/",
 };
 
 $(document).ready(function () {
-    $("#searchForm").on("submit", function (event) {
-        let query = $("#searchText").val();
+    $("#movieSearchForm").on("submit", function (event) {
+        let query = $("#movieSearchText").val();
         getMovies(query);
         event.preventDefault();
     });
@@ -19,10 +21,10 @@ function getMovies(query) {
             $.each(movies, function (index, movie) {
                 output += `
                     <div class="col-md-4 col-lg-3">
-                        <div class="movie-card text-center">
+                        <div class="search-card text-center">
                             <img src="${movie.Poster}"/>     
                             <h4 class="white" >${movie.Title}</h4>
-                            <a onclick="selectedMovie('${movie.imdbID}')" class="movie-details-button hvr-shutter-out-horizontal red" href="#" data-toggle="modal" data-target="#movieModal">Movie Details</a>
+                            <a onclick="selectedMovie('${movie.imdbID}')" class="details-button hvr-shutter-out-horizontal red" href="#" data-toggle="modal" data-target="#modal">Movie Details</a>
                         </div>
                     </div>
                 `;
@@ -46,7 +48,7 @@ function getMovie() {
         .then(function (response) {
             let movie = response;
 
-            $("#movieModalTitle").html(movie.Title);
+            $("#ModalTitle").html(movie.Title);
 
             $(".modal-body").html(`
                 <ul class="list-group">
@@ -87,6 +89,90 @@ function getMovie() {
             console.log(error);
         });
 }
+
+/* People Searching Method */
+
+const personApi = {
+    key: "dbf7a083d0697d1c9a00cdd04a37af37",
+    base: "https://api.themoviedb.org/3/search/",
+    personBase: "https://api.themoviedb.org/3/person/",
+};
+
+$(document).ready(function () {
+    $("#personSearchForm").on("submit", function (event) {
+        let query = $("#personSearchText").val();
+        getPeople(query);
+        event.preventDefault();
+    });
+});
+
+function getPeople(query) {
+    $.getJSON(
+        `${personApi.base}person?api_key=${personApi.key}&language=en-US&query=${query}&page=1&include_adult=false`
+    )
+        .then(function (response) {
+            let people = response.results;
+            let output = "";
+            $.each(people, function (index, person) {
+                output += `
+                    <div class="col-md-4 col-lg-3">
+                        <div class="search-card text-center">
+                            <img src="https://image.tmdb.org/t/p/original${person.profile_path}"/>     
+                            <h4 class="white" >${person.name}</h4>
+                            <a onclick="selectedPerson('${person.id}')" class="details-button hvr-shutter-out-horizontal red" href="#" data-toggle="modal" data-target="#modal">Details</a>
+                        </div>
+                    </div>
+                `;
+            });
+
+            $("#people").html(output);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+}
+
+function selectedPerson(id) {
+    $.when(sessionStorage.setItem("personId", id)).then(getPerson);
+}
+
+function getPerson() {
+    let personId = sessionStorage.getItem("personId");
+
+    $.getJSON(
+        `${personApi.personBase}${personId}?api_key=${personApi.key}&language=en-US`
+    )
+        .then(function (response) {
+            let person = response;
+
+            $("#ModalTitle").html(person.name);
+
+            $(".modal-body").html(`
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <strong>Birthday:</strong> ${person.birthday}
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Known For:</strong> ${person.known_for_department}
+                    </li>
+                    <li class="list-group-item">
+                        <strong>From:</strong> ${person.place_of_birth}
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Biography:</strong> ${person.biography}
+                    </li>
+                    <li class="list-group-item">
+                        <a href="https://www.imdb.com/name/${person.imdb_id}" target="_blank">View on IMDb</a>
+                    </li>
+                </ul>
+                `);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+}
+
+/* Buttons */
 
 jQuery(document).ready(function () {
     var toTop = $(".to-top-btn");
