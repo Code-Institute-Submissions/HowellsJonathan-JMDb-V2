@@ -146,7 +146,8 @@ header {
     margin-bottom: 20px;
 }
 
-.search-card h4 {
+.search-card h4,
+#top-rated h4 {
     margin-bottom: 10px;
     font-size: 30px;
     font-weight: 600;
@@ -158,7 +159,7 @@ header {
     cursor: pointer;
     text-decoration: none;
     border: 1px solid #de4c4c;
-    padding: 7px 10px;
+    padding: 0.5em 0.6em;
 }
 
 .details-button:hover {
@@ -201,16 +202,52 @@ header {
 }
 
 #buffer-page .container {
-    margin-bottom: 30px;
+    margin-bottom: 2em;
 }
 
 #buffer-page img {
     float: right;
-    width: 250px;
+    width: 18em;
 }
 
 #buffer-page div h2 {
-    font-size: 50px;
+    font-size: 4em;
+}
+
+/* Top rated */
+
+.heading h2 {
+    font-size: 3em;
+    margin-bottom: 0.8em;
+}
+
+#trending-section {
+    text-align: center;
+    color: #fff;
+}
+
+#trending .item h4 {
+    font-size: 1.5em;
+}
+
+#trending .item {
+    width: 16em;
+    padding: 2em 0 2em 0;
+}
+
+#trending img {
+    display: inline-block;
+    height: 20em;
+    width: 15em;
+    margin-bottom: 1em;
+}
+
+.switch-btn {
+    color: #fff;
+    background-color: transparent;
+    border: 1px solid #de4c4c;
+    text-decoration: none;
+    padding: 0.3em 0.3em;
 }
 
 /* Media queries */
