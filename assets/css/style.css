@@ -150,7 +150,7 @@ header {
     background-color: #080b0c;
 }
 
-.search-sect .jumbotron {
+.search-sect {
     text-align: center;
 }
 
@@ -190,14 +190,28 @@ header {
     background: #de4c4c;
 }
 
-.collapse-button {
-    background-color: #de4c4c;
-    position: fixed;
-    right: 0.8em;
-    bottom: 0.8em;
-    height: 3em;
-    width: 3em;
+.collapse-button-m,
+.collapse-button-p {
+    display: none;
     z-index: 1000;
+    padding: 1em 0 1em 0;
+}
+
+.collapse-button-m i,
+.collapse-button-p i {
+    font-size: 3em;
+    color: #fff;
+}
+
+.collapse-button i:hover,
+.collapse-button-p i:hover {
+    color: #de4c4c;
+    transition: ease-in 0.3s;
+}
+
+.flip {
+    transform: rotate(-180deg);
+    transition: 0.5s ease-in;
 }
 
 /* Media queries */

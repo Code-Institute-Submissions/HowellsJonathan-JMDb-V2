@@ -1,23 +1,28 @@
 /* Movie Searching Method */
 
 const movieApi = {
+    /* base variable to store key and http reference for api */
     key: "7506dcc9",
     base: "http://www.omdbapi.com/",
 };
 
 $(document).ready(function () {
+    /* when page is loaded */
     $("#movieSearchForm").on("submit", function (event) {
+        /* similar to addEventListener("keypress", function()) */
         let query = $("#movieSearchText").val();
         getMovies(query);
         event.preventDefault();
     });
 });
 
+/* pulls up total list of movies with the input from the user */
 function getMovies(query) {
     $.getJSON(`${movieApi.base}?s=${query}&apikey=${movieApi.key}`)
         .then(function (response) {
             let movies = response.Search;
             let output = "";
+            /* for each of the responses in JSON output html to the webpage */
             $.each(movies, function (index, movie) {
                 output += `
                     <div class="col-md-4 col-lg-3">
@@ -30,24 +35,38 @@ function getMovies(query) {
                 `;
             });
 
-            $("#movies").html(output);
+            /* outputs the html to the div with #movies-to-collapse */
+            $("#movies-to-collapse").html(output);
+
+            $(".collapse-button-m").show();
         })
         .catch(function (error) {
             console.log(error);
         });
 }
 
+function collapseMovies() {
+    /* Function to be called when collapse button is clicked */
+    $("#movies-to-collapse").toggle();
+    $(".collapse-button-m").toggleClass("flip");
+}
+
+/* When "get details" button is clicked on a movie this stores the id of the movie 
+  to be used in another function to get more information on the movie */
 function selectedMovie(id) {
     $.when(sessionStorage.setItem("movieId", id)).then(getMovie);
 }
 
 function getMovie() {
+    /* retrieves the stores id */
     let movieId = sessionStorage.getItem("movieId");
 
+    /* uses the stored id to get more details about the selected movie */
     $.getJSON(`${movieApi.base}?i=${movieId}&apikey=${movieApi.key}`)
         .then(function (response) {
             let movie = response;
 
+            /* changes the modals details to data from the JSON api call */
             $("#ModalTitle").html(movie.Title);
 
             $(".modal-body").html(`
@@ -90,7 +109,8 @@ function getMovie() {
         });
 }
 
-/* People Searching Method */
+/* People Searching Method 
+   see above comments for below code */
 
 const personApi = {
     key: "dbf7a083d0697d1c9a00cdd04a37af37",
@@ -125,11 +145,18 @@ function getPeople(query) {
                 `;
             });
 
-            $("#people").html(output);
+            $("#people-to-collapse").html(output);
+
+            $(".collapse-button-p").show();
         })
         .catch(function (error) {
             console.log(error);
         });
+}
+
+function collapsePeople() {
+    $("#people-to-collapse").slideToggle("slow", function () {}); // Slide toggle animation not working as intended. Too sharp
+    $(".collapse-button-p").toggleClass("flip");
 }
 
 function selectedPerson(id) {
