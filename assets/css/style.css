@@ -20,7 +20,7 @@ html {
 }
 
 .overflow-wrap {
-    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 .top-line {
@@ -28,6 +28,15 @@ html {
     height: 3vh;
     background-color: #de4c4c;
     margin-bottom: 2em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: normal;
 }
 
 /* Colors */
@@ -106,9 +115,14 @@ header {
     background-size: cover;
     background-position: center;
     width: 100vw;
+    max-width: 100%;
     height: 40vh;
     align-items: center;
     text-align: center;
+}
+
+.d-flex {
+    justify-content: center;
 }
 
 .home-text {
@@ -123,7 +137,6 @@ header {
 
 .home-text p {
     margin: 0;
-    line-height: normal;
     font-size: 1.5em;
     font-weight: 700;
 }
@@ -137,19 +150,17 @@ header {
 #movies img,
 #people img {
     margin-bottom: 1.2em;
-    height: 20em;
     width: 15em;
     border-radius: 3%;
 }
 
 .search-card {
-    height: 30em;
     font-weight: 700;
     margin: 1.1em 0 1.1em 0;
 }
 
 .search-card h4,
-#top-rated h4 {
+.item h4 {
     margin-bottom: 0.6em;
     font-size: 1.8em;
     font-weight: 600;
@@ -246,7 +257,6 @@ header {
 .trending img {
     display: inline-block;
     height: 20em;
-    width: 15em;
     margin-bottom: 1em;
     border-radius: 3%;
 }
@@ -278,5 +288,26 @@ footer h5 {
 @media only screen and (min-width: 375px) {
     #buffer-page div h2 {
         font-size: 3.8em;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .home-text {
+        max-width: 30em;
+        padding: 2em;
+    }
+    #mainNav,
+    .navbar-brand {
+        font-size: 1.5em;
+    }
+    #movies img,
+    #people img {
+        width: 13em;
+    }
+    .trending-container {
+        margin: 0 2em 0 2em;
+    }
+    .item {
+        margin: 1em;
     }
 }

@@ -3,7 +3,7 @@
 const trendingApi = {
     key: "dbf7a083d0697d1c9a00cdd04a37af37",
     base: "https://api.themoviedb.org/3/trending/",
-    detailsBase: "https://api.themoviedb.org/3/movie/",
+    detailsBase: "https://api.themoviedb.org/3/",
 };
 
 $(document).ready(function () {
@@ -78,6 +78,7 @@ $(document).ready(function () {
             {
                 breakpoint: 480,
                 settings: {
+                    dots: false,
                     arrows: false,
                     centerMode: true,
                     centerPadding: "3em",
@@ -98,7 +99,7 @@ $(document).ready(function () {
                     <div class="item">
                         <img src="https://image.tmdb.org/t/p/original${show.poster_path}" />
                         <h4 class="white">${show.name}</h4>
-                        <a onclick="tmdbSelectedMovie('${show.id}')" class="details-button hvr-shutter-out-horizontal red" href="#" data-toggle="modal" data-target="#modal">Movie Details</a>
+                        <a onclick="tmdbSelectedShow('${show.id}')" class="details-button hvr-shutter-out-horizontal red" href="#" data-toggle="modal" data-target="#modal">Movie Details</a>
                     </div>
                 `;
             });
@@ -127,6 +128,7 @@ $(document).ready(function () {
             {
                 breakpoint: 480,
                 settings: {
+                    dots: false,
                     arrows: false,
                     centerMode: true,
                     centerPadding: "3em",
@@ -157,12 +159,27 @@ $(document).ready(function () {
     );
 });
 
+/* Gets the tmbd id from JSON data then calls on the api again to get the Imdb Id which can then be
+re-routed to the main function on the search.js page to get all the details of the movie and 
+display them in the modal */
 function tmdbSelectedMovie(id) {
     $.getJSON(
-        `${trendingApi.detailsBase}${id}?api_key=${trendingApi.key}&language=en-US`
+        `${trendingApi.detailsBase}movie/${id}?api_key=${trendingApi.key}&language=en-US`
     ).then(function (detailsResponse) {
-        let nowImdbId = detailsResponse.imdb_id;
-        selectedMovie(nowImdbId);
+        let movieImdb = detailsResponse.imdb_id;
+        selectedMovie(movieImdb);
+    });
+}
+
+/* Similar to the above function, but once the tmbd id is gathered from the JSON data it then
+performs another call to get the external ids such as the Imdb one to then re-route back 
+to the main function on search.js and applied to the modal */
+function tmdbSelectedShow(id) {
+    $.getJSON(
+        `${trendingApi.detailsBase}tv/${id}/external_ids?api_key=${trendingApi.key}&language=en-US`
+    ).then(function (detailsResponse) {
+        let showImdb = detailsResponse.imdb_id;
+        selectedMovie(showImdb);
     });
 }
 

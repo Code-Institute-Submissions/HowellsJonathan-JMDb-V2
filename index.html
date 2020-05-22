@@ -44,7 +44,10 @@
                         ><i class="fas fa-bars"></i
                     ></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
+                <div
+                    class="collapse navbar-collapse justify-content-end"
+                    id="navbarResponsive"
+                >
                     <ul class="navbar-nav">
                         <li>
                             <a
@@ -71,9 +74,9 @@
 
         <!-- Landing Page -->
         <header class="intro-page">
-            <div class="container d-flex home-background">
+            <div class="container-fluid d-flex home-background">
                 <div class="col-12 home-text red">
-                    <h1>Welcome</h1>
+                    <h1 class="overflow-wrap">Welcome</h1>
                     <p>
                         Discover, learn and indulge in movies, tv shows and the
                         beloved people staring in them!
@@ -88,7 +91,9 @@
 
             <div class="container">
                 <div class="col-12 mx-auto jumbotron">
-                    <h3>Search for any movie or Tv Show</h3>
+                    <h3 class="overflow-wrap">
+                        Search for any movie or Tv Show
+                    </h3>
                     <form id="movieSearchForm">
                         <input
                             type="text"
@@ -101,8 +106,8 @@
             </div>
 
             <div class="container">
-                <div id="movies" class="row">
-                    <div id="movies-to-collapse"></div>
+                <div id="movies">
+                    <div id="movies-to-collapse" class="row"></div>
                 </div>
             </div>
 
@@ -119,7 +124,9 @@
 
             <div class="container">
                 <div class="col-12 mx-auto jumbotron">
-                    <h3>Search for an actor or actress</h3>
+                    <h3 class="overflow-wrap">
+                        Search for an actor or actress
+                    </h3>
                     <form id="personSearchForm">
                         <input
                             type="text"
@@ -132,8 +139,8 @@
             </div>
 
             <div class="container">
-                <div id="people" class="row">
-                    <div id="people-to-collapse"></div>
+                <div id="people">
+                    <div id="people-to-collapse" class="row"></div>
                 </div>
             </div>
 
@@ -150,7 +157,7 @@
 
             <div class="row">
                 <div class="container">
-                    <div class="col-12 col-md-3">
+                    <div class="col-12 col-lg-3">
                         <h2 class="white">Discover...</h2>
                         <h2 class="red">Learn...</h2>
                         <h2 class="white">Indulge...</h2>
@@ -158,7 +165,7 @@
                 </div>
 
                 <img
-                    class="d-none d-md-block col-md-9"
+                    class="d-none d-lg-block col-lg-9"
                     src="assets/images/action.jpg"
                     alt="Director using clapperboard"
                 />
@@ -172,19 +179,19 @@
             <h2 class="heading">Trending</h2>
 
             <h3 class="sub-heading red">Movies</h3>
-            <div class="">
+            <div class="trending-container">
                 <div id="trending-movies" class="row trending"></div>
             </div>
 
             <div class="top-line"></div>
             <h3 class="sub-heading red">Tv Shows</h3>
-            <div class="">
+            <div class="trending-container">
                 <div id="trending-tv-shows" class="row trending"></div>
             </div>
 
             <div class="top-line"></div>
             <h3 class="sub-heading red">People</h3>
-            <div class="">
+            <div class="trending-container">
                 <div id="trending-people" class="row trending"></div>
             </div>
         </section>
