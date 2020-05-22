@@ -259,6 +259,20 @@ header {
     padding: 0.3em 0.3em;
 }
 
+/* Footer */
+
+footer {
+    display: flex;
+    background-color: #de4c4c;
+    height: 5vh;
+    justify-content: center;
+    align-items: center;
+}
+
+footer h5 {
+    margin: 0;
+}
+
 /* Media queries */
 
 @media only screen and (min-width: 375px) {

@@ -9,25 +9,26 @@ const trendingApi = {
 $(document).ready(function () {
     /* when page is loaded */
     $("#trending-movies").slick({
-        centerMode: true,
-        centerPadding: "5em",
+        infinite: false,
+        dots: true,
         slidesToShow: 3,
         slidesToScroll: 1,
         adaptiveHeight: true,
         autoplay: true,
         responsive: [
             {
-                breakpoint: 768,
+                breakpoint: 770,
                 settings: {
+                    infinite: true,
+                    dots: false,
                     arrows: false,
-                    centerMode: true,
-                    centerPadding: "3em",
                     slidesToShow: 3,
                 },
             },
             {
                 breakpoint: 480,
                 settings: {
+                    dots: false,
                     arrows: false,
                     centerMode: true,
                     centerPadding: "3em",
@@ -58,19 +59,19 @@ $(document).ready(function () {
     );
 
     $("#trending-tv-shows").slick({
-        centerMode: true,
-        centerPadding: "5em",
+        infinite: false,
+        dots: true,
         slidesToShow: 3,
         slidesToScroll: 1,
         adaptiveHeight: true,
         autoplay: true,
         responsive: [
             {
-                breakpoint: 768,
+                breakpoint: 770,
                 settings: {
                     arrows: false,
-                    centerMode: true,
-                    centerPadding: "3em",
+                    infinite: true,
+                    dots: false,
                     slidesToShow: 3,
                 },
             },
@@ -107,19 +108,19 @@ $(document).ready(function () {
     );
 
     $("#trending-people").slick({
-        centerMode: true,
-        centerPadding: "5em",
+        infinite: false,
+        dots: true,
         slidesToShow: 3,
         slidesToScroll: 1,
         adaptiveHeight: true,
         autoplay: true,
         responsive: [
             {
-                breakpoint: 768,
+                breakpoint: 770,
                 settings: {
                     arrows: false,
-                    centerMode: true,
-                    centerPadding: "3em",
+                    infinite: true,
+                    dots: false,
                     slidesToShow: 3,
                 },
             },
