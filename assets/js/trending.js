@@ -9,20 +9,20 @@ const trendingApi = {
 $(document).ready(function () {
     /* when page is loaded */
     $("#trending-movies").slick({
-        mobileFirst: true,
+        mobileFirst: true, // mobileFirst works the same way that @media does now, before it was reversed and confusing to understand when looking at the code
         autoplay: true,
-        dots: false,
-        arrows: false,
+        dots: false, // seen on a lot of carousels, dots at the bottom, not needed here
+        arrows: false, // arrows false until laptop resolution width
         slidesToShow: 1,
         slidesToScroll: 1,
-        centerMode: true,
+        centerMode: true, // focuses the current slide in the center of the screen
         infinite: true,
-        adaptiveHeight: true,
-        focusOnSelect: true,
-        swipeToSlide: true,
+        adaptiveHeight: true, // will change the height of the container to match title length, on mobile with 1 slide showing the height will move back and forth
+        focusOnSelect: true, // clicking on specific slide will center it on the screen
+        swipeToSlide: true, // allows for swiping on mobile or desktop to go past the defined slidesToScroll limit
         responsive: [
             {
-                breakpoint: 425,
+                breakpoint: 425, // min height this will change, set to L mobile device
                 settings: {
                     slidesToShow: 2,
                 },
@@ -33,7 +33,7 @@ $(document).ready(function () {
                     autoplay: false,
                     arrows: true,
                     slidesToShow: 5,
-                    prevArrow: $("#movie-prev"),
+                    prevArrow: $("#movie-prev"), // arrows are defined as true and then located using this selector for custom styling
                     nextArrow: $("#movie-next"),
                 },
             },
@@ -56,10 +56,12 @@ $(document).ready(function () {
                 `;
             });
 
-            $("#trending-movies").slick("slickAdd", movieOutput);
+            $("#trending-movies").slick("slickAdd", movieOutput); // add's the movieOutput html to the slick.js container creating a new carousel
         }
     );
 
+    /* Originally wanted a button to remove html and add new for the user to switch 
+    inbetween, no functionality to do that in the plugin so not a viable option */
     $("#trending-tv-shows").slick({
         mobileFirst: true,
         autoplay: true,
