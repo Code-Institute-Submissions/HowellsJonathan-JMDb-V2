@@ -23,7 +23,7 @@
             href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
         />
         <link rel="stylesheet" href="assets/css/style.css" />
-        <title>Title</title>
+        <title>JMdb</title>
     </head>
     <body>
         <!-- Navigation -->
@@ -31,7 +31,7 @@
             class="navbar navbar-expand-md navbar-dark nav-background fixed-top scrolling-navbar"
             id="mainNav"
         >
-            <div class="container">
+            <div class="container overflow-wrap">
                 <a href="#" class="navbar-brand to-top-btn hvr-grow">JMDb</a>
                 <button
                     class="navbar-toggler"
@@ -52,19 +52,25 @@
                         <li>
                             <a
                                 id="to-movie-btn"
-                                class="nav-link hvr-grow"
+                                class="nav-link"
                                 href="#movie-search"
                                 >Movies</a
                             >
                         </li>
                         <li>
-                            <a class="nav-link hvr-grow" href="#actor-search"
+                            <a
+                                id="to-people-btn"
+                                class="nav-link"
+                                href="#actor-search"
                                 >People</a
                             >
                         </li>
                         <li>
-                            <a class="nav-link hvr-grow" href="#top-rated"
-                                >Top Rated</a
+                            <a
+                                id="to-trending-btn"
+                                class="nav-link"
+                                href="#top-rated"
+                                >Trending</a
                             >
                         </li>
                     </ul>
@@ -87,7 +93,7 @@
 
         <!-- Movie search section -->
         <section class="search-sect dark-bg">
-            <div class="top-line"></div>
+            <div class="top-line" id="movie-btn"></div>
 
             <div class="container">
                 <div class="col-12 mx-auto jumbotron">
@@ -120,7 +126,7 @@
 
         <!-- People search section -->
         <section class="search-sect dark-bg">
-            <div class="top-line"></div>
+            <div class="top-line" id="people-btn"></div>
 
             <div class="container">
                 <div class="col-12 mx-auto jumbotron">
@@ -173,7 +179,7 @@
 
         <!-- Trending section -->
         <section id="trending-section" class="dark-bg">
-            <div class="top-line"></div>
+            <div class="top-line" id="trending-btn"></div>
 
             <h2 class="heading">Trending</h2>
 
@@ -274,6 +280,6 @@
             src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
         ></script>
         <script src="assets/js/search.js" type="text/javascript"></script>
-        <script src="assets/js/top-rated.js" type="text/javascript"></script>
+        <script src="assets/js/trending.js" type="text/javascript"></script>
     </body>
 </html>

@@ -211,13 +211,13 @@ jQuery(document).ready(function () {
         $("html, body").animate({ scrollTop: 0 }, 1000);
     });
 
-    var bufferBtn = $("#to-buffer-btn");
+    var peopleBtn = $("#to-people-btn");
 
-    bufferBtn.on("click", function (event) {
+    peopleBtn.on("click", function (event) {
         event.preventDefault();
         $("html, body").animate(
             {
-                scrollTop: $("#buffer-page").offset().top,
+                scrollTop: $("#people-btn").offset().top,
             },
             1000
         );
@@ -229,7 +229,19 @@ jQuery(document).ready(function () {
         event.preventDefault();
         $("html, body").animate(
             {
-                scrollTop: $("#movie-search").offset().top,
+                scrollTop: $("#movie-btn").offset().top,
+            },
+            1000
+        );
+    });
+
+    var movieBtn = $("#to-trending-btn");
+
+    movieBtn.on("click", function (event) {
+        event.preventDefault();
+        $("html, body").animate(
+            {
+                scrollTop: $("#trending-btn").offset().top,
             },
             1000
         );
