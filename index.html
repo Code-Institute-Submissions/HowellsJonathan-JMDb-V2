@@ -155,20 +155,19 @@
         <section id="buffer-page" class="dark-bg">
             <div class="top-line"></div>
 
-            <div class="row">
-                <div class="container">
-                    <div class="col-12 col-lg-3">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 col-lg-5 buffer-text">
                         <h2 class="white">Discover...</h2>
                         <h2 class="red">Learn...</h2>
                         <h2 class="white">Indulge...</h2>
                     </div>
+                    <img
+                        class="d-none d-lg-block col-lg-7"
+                        src="assets/images/action.jpg"
+                        alt="Director using clapperboard"
+                    />
                 </div>
-
-                <img
-                    class="d-none d-lg-block col-lg-9"
-                    src="assets/images/action.jpg"
-                    alt="Director using clapperboard"
-                />
             </div>
         </section>
 
@@ -179,20 +178,44 @@
             <h2 class="heading">Trending</h2>
 
             <h3 class="sub-heading red">Movies</h3>
-            <div class="trending-container">
-                <div id="trending-movies" class="row trending"></div>
+            <div class="flex">
+                <a id="movie-prev">
+                    <i class="fas fa-caret-square-left scroll-arrow"></i>
+                </a>
+                <div class="trending-container">
+                    <div id="trending-movies" class="row trending"></div>
+                </div>
+                <a id="movie-next">
+                    <i class="fas fa-caret-square-right scroll-arrow"></i>
+                </a>
             </div>
 
             <div class="top-line"></div>
             <h3 class="sub-heading red">Tv Shows</h3>
-            <div class="trending-container">
-                <div id="trending-tv-shows" class="row trending"></div>
+            <div class="flex">
+                <a id="show-prev">
+                    <i class="fas fa-caret-square-left scroll-arrow"></i>
+                </a>
+                <div class="trending-container">
+                    <div id="trending-tv-shows" class="row trending"></div>
+                </div>
+                <a id="show-next">
+                    <i class="fas fa-caret-square-right scroll-arrow"></i>
+                </a>
             </div>
 
             <div class="top-line"></div>
             <h3 class="sub-heading red">People</h3>
-            <div class="trending-container">
-                <div id="trending-people" class="row trending"></div>
+            <div class="flex">
+                <a id="people-prev">
+                    <i class="fas fa-caret-square-left scroll-arrow"></i>
+                </a>
+                <div class="trending-container">
+                    <div id="trending-people" class="row trending"></div>
+                </div>
+                <a id="people-next">
+                    <i class="fas fa-caret-square-right scroll-arrow"></i>
+                </a>
             </div>
         </section>
 

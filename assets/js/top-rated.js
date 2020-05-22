@@ -9,29 +9,41 @@ const trendingApi = {
 $(document).ready(function () {
     /* when page is loaded */
     $("#trending-movies").slick({
-        infinite: false,
-        dots: true,
-        slidesToShow: 3,
+        prevArrow: $("#movie-prev"),
+        nextArrow: $("#movie-next"),
+        focusOnSelect: true,
+        swipeToSlide: true,
+        centerMode: true,
+        infinite: true,
+        slidesToShow: 5,
         slidesToScroll: 1,
         adaptiveHeight: true,
-        autoplay: true,
+        autoplay: false,
         responsive: [
+            {
+                breakpoint: 1100,
+                settings: {
+                    autoplay: true,
+                    arrows: false,
+                    dots: false,
+                    slidesToShow: 3,
+                },
+            },
             {
                 breakpoint: 770,
                 settings: {
-                    infinite: true,
+                    autoplay: true,
                     dots: false,
                     arrows: false,
-                    slidesToShow: 3,
+                    slidesToShow: 2,
                 },
             },
             {
                 breakpoint: 480,
                 settings: {
+                    autoplay: true,
                     dots: false,
                     arrows: false,
-                    centerMode: true,
-                    centerPadding: "3em",
                     slidesToShow: 1,
                 },
             },
@@ -59,29 +71,41 @@ $(document).ready(function () {
     );
 
     $("#trending-tv-shows").slick({
-        infinite: false,
-        dots: true,
-        slidesToShow: 3,
+        prevArrow: $("#show-prev"),
+        nextArrow: $("#show-next"),
+        focusOnSelect: true,
+        swipeToSlide: true,
+        centerMode: true,
+        infinite: true,
+        slidesToShow: 5,
         slidesToScroll: 1,
         adaptiveHeight: true,
-        autoplay: true,
+        autoplay: false,
         responsive: [
             {
-                breakpoint: 770,
+                breakpoint: 1100,
                 settings: {
+                    autoplay: true,
                     arrows: false,
-                    infinite: true,
                     dots: false,
                     slidesToShow: 3,
                 },
             },
             {
+                breakpoint: 770,
+                settings: {
+                    autoplay: true,
+                    arrows: false,
+                    dots: false,
+                    slidesToShow: 2,
+                },
+            },
+            {
                 breakpoint: 480,
                 settings: {
+                    autoplay: true,
                     dots: false,
                     arrows: false,
-                    centerMode: true,
-                    centerPadding: "3em",
                     slidesToShow: 1,
                 },
             },
@@ -109,29 +133,41 @@ $(document).ready(function () {
     );
 
     $("#trending-people").slick({
-        infinite: false,
-        dots: true,
-        slidesToShow: 3,
+        prevArrow: $("#people-prev"),
+        nextArrow: $("#people-next"),
+        focusOnSelect: true,
+        swipeToSlide: true,
+        centerMode: true,
+        infinite: true,
+        slidesToShow: 5,
         slidesToScroll: 1,
         adaptiveHeight: true,
-        autoplay: true,
+        autoplay: false,
         responsive: [
             {
-                breakpoint: 770,
+                breakpoint: 1100,
                 settings: {
+                    autoplay: true,
                     arrows: false,
-                    infinite: true,
                     dots: false,
                     slidesToShow: 3,
                 },
             },
             {
+                breakpoint: 770,
+                settings: {
+                    autoplay: true,
+                    arrows: false,
+                    dots: false,
+                    slidesToShow: 2,
+                },
+            },
+            {
                 breakpoint: 480,
                 settings: {
+                    autoplay: true,
                     dots: false,
                     arrows: false,
-                    centerMode: true,
-                    centerPadding: "3em",
                     slidesToShow: 1,
                 },
             },

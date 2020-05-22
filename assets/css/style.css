@@ -27,7 +27,7 @@ html {
     width: 100%;
     height: 3vh;
     background-color: #de4c4c;
-    margin-bottom: 2em;
+    margin-bottom: 2rem;
 }
 
 h1,
@@ -108,15 +108,12 @@ header {
 }
 
 .home-background {
-    position: absolute;
-    left: 0;
-    top: 0;
     background-image: url(../images/movie-projector.jpg);
     background-size: cover;
     background-position: center;
     width: 100vw;
     max-width: 100%;
-    height: 40vh;
+    height: 100%;
     align-items: center;
     text-align: center;
 }
@@ -142,6 +139,10 @@ header {
 }
 
 /* Search for pages */
+
+.form-control {
+    border-radius: 3rem;
+}
 
 .search-sect {
     text-align: center;
@@ -214,13 +215,8 @@ header {
     text-align: center;
 }
 
-#buffer-page .container {
+#buffer-page .container-fluid {
     margin-bottom: 2em;
-}
-
-#buffer-page img {
-    float: right;
-    width: 18em;
 }
 
 #buffer-page div h2 {
@@ -230,14 +226,18 @@ header {
 /* Trending */
 
 .heading {
-    font-size: 3em;
-    margin-bottom: 0.8em;
+    font-size: 3rem;
+    margin-bottom: 0.8rem;
 }
 
 .sub-heading {
     text-transform: uppercase;
-    font-size: 2em;
-    margin-bottom: 0.5em;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.trending-container {
+    max-width: 80%;
 }
 
 #trending-section {
@@ -245,19 +245,27 @@ header {
     color: #fff;
 }
 
-.trending .item h4 {
-    font-size: 1.5em;
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.trending .item {
-    width: 16em;
-    padding-bottom: 2em;
+.item {
+    font-size: 1rem;
+    width: 16rem;
+    padding-bottom: 2rem;
+    margin: 1rem;
+}
+
+.item h4 {
+    margin-bottom: 1rem;
 }
 
 .trending img {
     display: inline-block;
-    height: 20em;
-    margin-bottom: 1em;
+    width: 100%;
+    margin-bottom: 1rem;
     border-radius: 3%;
 }
 
@@ -266,7 +274,11 @@ header {
     background-color: transparent;
     border: 1px solid #de4c4c;
     text-decoration: none;
-    padding: 0.3em 0.3em;
+    padding: 0.3rem 0.3rem;
+}
+
+.scroll-arrow {
+    display: none;
 }
 
 /* Footer */
@@ -287,14 +299,14 @@ footer h5 {
 
 @media only screen and (min-width: 375px) {
     #buffer-page div h2 {
-        font-size: 3.8em;
+        font-size: 3.8rem;
     }
 }
 
 @media only screen and (min-width: 768px) {
     .home-text {
-        max-width: 30em;
-        padding: 2em;
+        max-width: 30rem;
+        padding: 2rem;
     }
     #mainNav,
     .navbar-brand {
@@ -302,12 +314,71 @@ footer h5 {
     }
     #movies img,
     #people img {
-        width: 13em;
+        width: 13rem;
     }
     .trending-container {
         margin: 0 2em 0 2em;
     }
     .item {
-        margin: 1em;
+        font-size: 1em;
+    }
+    .jumbotron {
+        width: 60%;
+        padding: 2rem 1rem 2rem 1rem;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    #buffer-page img {
+        float: right;
+        width: 100%;
+        padding: 0;
+    }
+
+    .buffer-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-size: 1.3em;
+    }
+
+    .form-control {
+        height: 3rem;
+        font-size: 1.5rem;
+    }
+
+    .home-text {
+        font-size: 1.5em;
+        max-width: 40rem;
+    }
+
+    .search-card {
+        padding-bottom: 1rem;
+    }
+}
+
+@media only screen and (min-width: 1080px) {
+    .intro-page {
+        height: 60vh;
+    }
+    .item {
+        font-size: 0.6rem;
+    }
+    .trending-container {
+        max-width: 70%;
+    }
+    .details-button {
+        font-size: 1.4em;
+    }
+    .scroll-arrow {
+        display: inline-block;
+        font-size: 3rem;
+        color: #de4c4c;
+    }
+}
+
+@media only screen and (min-width: 1400px) {
+    .jumbotron {
+        max-width: 60%;
     }
 }
