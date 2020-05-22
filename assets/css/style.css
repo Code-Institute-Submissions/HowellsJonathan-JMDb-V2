@@ -16,6 +16,7 @@ html {
     padding: 0;
     margin: 0;
     font-family: "Lora", sans-serif;
+    overflow-x: hidden;
 }
 
 .overflow-wrap {
@@ -26,7 +27,7 @@ html {
     width: 100%;
     height: 3vh;
     background-color: #de4c4c;
-    margin-bottom: 30px;
+    margin-bottom: 2em;
 }
 
 /* Colors */
@@ -135,21 +136,22 @@ header {
 
 #movies img,
 #people img {
-    width: 70%;
-    margin-bottom: 20px;
-    height: 300px;
+    margin-bottom: 1.2em;
+    height: 20em;
+    width: 15em;
+    border-radius: 3%;
 }
 
 .search-card {
-    height: 450px;
+    height: 30em;
     font-weight: 700;
-    margin-bottom: 20px;
+    margin: 1.1em 0 1.1em 0;
 }
 
 .search-card h4,
 #top-rated h4 {
-    margin-bottom: 10px;
-    font-size: 30px;
+    margin-bottom: 0.6em;
+    font-size: 1.8em;
     font-weight: 600;
 }
 
@@ -214,11 +216,17 @@ header {
     font-size: 4em;
 }
 
-/* Top rated */
+/* Trending */
 
-.heading h2 {
+.heading {
     font-size: 3em;
     margin-bottom: 0.8em;
+}
+
+.sub-heading {
+    text-transform: uppercase;
+    font-size: 2em;
+    margin-bottom: 0.5em;
 }
 
 #trending-section {
@@ -226,20 +234,21 @@ header {
     color: #fff;
 }
 
-#trending .item h4 {
+.trending .item h4 {
     font-size: 1.5em;
 }
 
-#trending .item {
+.trending .item {
     width: 16em;
-    padding: 2em 0 2em 0;
+    padding-bottom: 2em;
 }
 
-#trending img {
+.trending img {
     display: inline-block;
     height: 20em;
     width: 15em;
     margin-bottom: 1em;
+    border-radius: 3%;
 }
 
 .switch-btn {
@@ -254,6 +263,6 @@ header {
 
 @media only screen and (min-width: 375px) {
     #buffer-page div h2 {
-        font-size: 60px;
+        font-size: 3.8em;
     }
 }
