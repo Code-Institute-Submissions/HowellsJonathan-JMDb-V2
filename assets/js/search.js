@@ -3,7 +3,7 @@
 const movieApi = {
     /* base variable to store key and http reference for api */
     key: "7506dcc9",
-    base: "http://www.omdbapi.com/",
+    base: "https://www.omdbapi.com/",
 };
 
 $(document).ready(function () {
@@ -18,9 +18,12 @@ $(document).ready(function () {
 
 /* pulls up total list of movies with the input from the user */
 function getMovies(query) {
-    $.getJSON(`${movieApi.base}?s=${query}&apikey=${movieApi.key}`)
+    $.getJSON(
+        `${movieApi.base}?s=${query}&apikey=${movieApi.key}`
+    ) /* .getJSON method retrieves data from an external api */
         .then(function (response) {
-            let movies = response.Search;
+            let movies =
+                response.Search; /* the api is stored in arrays, here a new var is created to select the particular array needed */
             let output = "";
             /* for each of the responses in JSON output html to the webpage */
             $.each(movies, function (index, movie) {
@@ -204,14 +207,21 @@ function getPerson() {
 /* Buttons */
 
 jQuery(document).ready(function () {
-    var toTop = $(".to-top-btn");
+    var toTop = $(
+        ".to-top-btn"
+    ); /* A button that scrolls back to the top of the page */
 
     toTop.on("click", function (event) {
         event.preventDefault();
-        $("html, body").animate({ scrollTop: 0 }, 1000);
+        $("html, body").animate(
+            { scrollTop: 0 },
+            1000
+        ); /* Animate the scroll function to make it smooth and not a sharp jump */
     });
 
-    var peopleBtn = $("#to-people-btn");
+    var peopleBtn = $(
+        "#to-people-btn"
+    ); /* a button that will scroll to a particular section on the website */
 
     peopleBtn.on("click", function (event) {
         event.preventDefault();
@@ -223,7 +233,9 @@ jQuery(document).ready(function () {
         );
     });
 
-    var movieBtn = $("#to-movie-btn");
+    var movieBtn = $(
+        "#to-movie-btn"
+    ); /* a button that will scroll to a particular section on the website */
 
     movieBtn.on("click", function (event) {
         event.preventDefault();
@@ -235,7 +247,9 @@ jQuery(document).ready(function () {
         );
     });
 
-    var movieBtn = $("#to-trending-btn");
+    var movieBtn = $(
+        "#to-trending-btn"
+    ); /* a button that will scroll to a particular section on the website */
 
     movieBtn.on("click", function (event) {
         event.preventDefault();
