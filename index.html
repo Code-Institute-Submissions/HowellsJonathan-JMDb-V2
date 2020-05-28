@@ -1,285 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
-        />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
-        />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css"
-            type="text/css"
-        />
-        <link
-            rel="stylesheet"
-            type="text/css"
-            href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
-        />
-        <link rel="stylesheet" href="assets/css/style.css" />
-        <title>JMdb</title>
-    </head>
-    <body>
-        <!-- Navigation -->
-        <nav
-            class="navbar navbar-expand-md navbar-dark nav-background fixed-top scrolling-navbar"
-            id="mainNav"
-        >
-            <div class="container overflow-wrap">
-                <a href="#" class="navbar-brand to-top-btn hvr-grow">JMDb</a>
-                <button
-                    class="navbar-toggler"
-                    type="button"
-                    data-toggle="collapse"
-                    data-target="#navbarResponsive"
-                    aria-controls="navbarResponsive"
-                >
-                    <span class="navbar-toggler-icon"
-                        ><i class="fas fa-bars"></i
-                    ></span>
-                </button>
-                <div
-                    class="collapse navbar-collapse justify-content-end"
-                    id="navbarResponsive"
-                >
-                    <ul class="navbar-nav">
-                        <li>
-                            <a
-                                id="to-movie-btn"
-                                class="nav-link"
-                                href="#movie-search"
-                                >Movies</a
-                            >
-                        </li>
-                        <li>
-                            <a
-                                id="to-people-btn"
-                                class="nav-link"
-                                href="#actor-search"
-                                >People</a
-                            >
-                        </li>
-                        <li>
-                            <a
-                                id="to-trending-btn"
-                                class="nav-link"
-                                href="#top-rated"
-                                >Trending</a
-                            >
-                        </li>
-                    </ul>
-                </div>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css"
+        type="text/css" />
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>JMdb</title>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-md navbar-dark nav-background fixed-top scrolling-navbar" id="mainNav">
+        <div class="container overflow-wrap">
+            <a href="#" class="navbar-brand to-top-btn hvr-grow">JMDb</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive">
+                <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarResponsive">
+                <ul class="navbar-nav">
+                    <li>
+                        <a id="to-movie-btn" class="nav-link" href="#movie-search">Movies</a>
+                    </li>
+                    <li>
+                        <a id="to-people-btn" class="nav-link" href="#actor-search">People</a>
+                    </li>
+                    <li>
+                        <a id="to-trending-btn" class="nav-link" href="#top-rated">Trending</a>
+                    </li>
+                </ul>
             </div>
-        </nav>
+        </div>
+    </nav>
 
-        <!-- Landing Page -->
-        <header class="intro-page">
-            <div class="container-fluid d-flex home-background">
-                <div class="col-12 home-text red">
-                    <h1 class="overflow-wrap">Welcome</h1>
-                    <p>
-                        Discover, learn and indulge in movies, tv shows and the
-                        beloved people staring in them!
-                    </p>
-                </div>
+    <!-- Landing Page -->
+    <header class="intro-page">
+        <div class="container-fluid d-flex home-background">
+            <div class="col-12 home-text red">
+                <h1 class="overflow-wrap">Welcome</h1>
+                <p>
+                    Discover, learn and indulge in movies, tv shows and the
+                    beloved people staring in them!
+                </p>
             </div>
-        </header>
+        </div>
+    </header>
 
-        <!-- Movie search section -->
-        <section class="search-sect dark-bg">
-            <div class="top-line" id="movie-btn"></div>
+    <!-- Movie search section -->
+    <section class="search-sect dark-bg">
+        <div class="top-line" id="movie-btn"></div>
 
-            <div class="container">
-                <div class="col-12 mx-auto jumbotron">
-                    <h3 class="overflow-wrap">
-                        Search for any movie or Tv Show
-                    </h3>
-                    <form id="movieSearchForm">
-                        <input
-                            type="text"
-                            class="form-control"
-                            id="movieSearchText"
-                            placeholder="Search..."
-                        />
-                    </form>
-                </div>
-            </div>
-
-            <div class="container">
-                <div id="movies">
-                    <div id="movies-to-collapse" class="row"></div>
-                </div>
-            </div>
-
-            <div class="collapse-button-m">
-                <a onclick="collapseMovies()" href="#"
-                    ><i class="fas fa-angle-double-up"></i
-                ></a>
-            </div>
-        </section>
-
-        <!-- People search section -->
-        <section class="search-sect dark-bg">
-            <div class="top-line" id="people-btn"></div>
-
-            <div class="container">
-                <div class="col-12 mx-auto jumbotron">
-                    <h3 class="overflow-wrap">
-                        Search for an actor or actress
-                    </h3>
-                    <form id="personSearchForm">
-                        <input
-                            type="text"
-                            class="form-control"
-                            id="personSearchText"
-                            placeholder="Search..."
-                        />
-                    </form>
-                </div>
-            </div>
-
-            <div class="container">
-                <div id="people">
-                    <div id="people-to-collapse" class="row"></div>
-                </div>
-            </div>
-
-            <div class="collapse-button-p">
-                <a onclick="collapsePeople()" href="#"
-                    ><i class="fas fa-angle-double-up"></i
-                ></a>
-            </div>
-        </section>
-
-        <!-- Seperater page -->
-        <section id="buffer-page" class="dark-bg">
-            <div class="top-line"></div>
-
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-12 col-lg-5 buffer-text">
-                        <h2 class="white">Discover...</h2>
-                        <h2 class="red">Learn...</h2>
-                        <h2 class="white">Indulge...</h2>
-                    </div>
-                    <img
-                        class="d-none d-lg-block col-lg-7"
-                        src="assets/images/action.jpg"
-                        alt="Director using clapperboard"
-                    />
-                </div>
-            </div>
-        </section>
-
-        <!-- Trending section -->
-        <section id="trending-section" class="dark-bg">
-            <div class="top-line" id="trending-btn"></div>
-
-            <h2 class="heading">Trending</h2>
-
-            <h3 class="sub-heading red">Movies</h3>
-            <div class="flex">
-                <a id="movie-prev">
-                    <i class="fas fa-caret-square-left scroll-arrow"></i>
-                </a>
-                <div class="trending-container">
-                    <div id="trending-movies" class="row trending"></div>
-                </div>
-                <a id="movie-next">
-                    <i class="fas fa-caret-square-right scroll-arrow"></i>
-                </a>
-            </div>
-
-            <div class="top-line"></div>
-            <h3 class="sub-heading red">Tv Shows</h3>
-            <div class="flex">
-                <a id="show-prev">
-                    <i class="fas fa-caret-square-left scroll-arrow"></i>
-                </a>
-                <div class="trending-container">
-                    <div id="trending-tv-shows" class="row trending"></div>
-                </div>
-                <a id="show-next">
-                    <i class="fas fa-caret-square-right scroll-arrow"></i>
-                </a>
-            </div>
-
-            <div class="top-line"></div>
-            <h3 class="sub-heading red">People</h3>
-            <div class="flex">
-                <a id="people-prev">
-                    <i class="fas fa-caret-square-left scroll-arrow"></i>
-                </a>
-                <div class="trending-container">
-                    <div id="trending-people" class="row trending"></div>
-                </div>
-                <a id="people-next">
-                    <i class="fas fa-caret-square-right scroll-arrow"></i>
-                </a>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer class="container-fluid">
-            <h5>© 2020 Jonathan Howells</h5>
-        </footer>
-
-        <!-- Modal html for use across the webpage -->
-        <div
-            class="modal fade"
-            id="modal"
-            tabindex="-1"
-            role="dialog"
-            aria-labelledby="ModalTitle"
-            aria-hidden="true"
-        >
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="ModalTitle"></h5>
-                        <button
-                            type="button"
-                            class="close"
-                            data-dismiss="modal"
-                            aria-label="Close"
-                        >
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        ...
-                    </div>
-                    <div class="modal-footer">
-                        <button
-                            type="button"
-                            class="btn btn-secondary"
-                            data-dismiss="modal"
-                        >
-                            Close
-                        </button>
-                    </div>
-                </div>
+        <div class="container">
+            <div class="col-12 mx-auto jumbotron">
+                <h3 class="overflow-wrap">
+                    Search for any movie or Tv Show
+                </h3>
+                <form id="movieSearchForm">
+                    <input type="text" class="form-control" id="movieSearchText" placeholder="Search..." />
+                </form>
             </div>
         </div>
 
-        <script
-            src="https://code.jquery.com/jquery-3.5.1.min.js"
-            integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-            crossorigin="anonymous"
-        ></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
-        <script
-            type="text/javascript"
-            src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
-        ></script>
-        <script src="assets/js/search.js" type="text/javascript"></script>
-        <script src="assets/js/trending.js" type="text/javascript"></script>
-    </body>
+        <div class="container">
+            <div id="movies">
+                <div id="movies-to-collapse" class="row"></div>
+            </div>
+        </div>
+
+        <div class="collapse-button-m">
+            <a onclick="collapseMovies()" href="#"><i class="fas fa-angle-double-up"></i></a>
+        </div>
+    </section>
+
+    <!-- People search section -->
+    <section class="search-sect dark-bg">
+        <div class="top-line" id="people-btn"></div>
+
+        <div class="container">
+            <div class="col-12 mx-auto jumbotron">
+                <h3 class="overflow-wrap">
+                    Search for an actor or actress
+                </h3>
+                <form id="personSearchForm">
+                    <input type="text" class="form-control" id="personSearchText" placeholder="Search..." />
+                </form>
+            </div>
+        </div>
+
+        <div class="container">
+            <div id="people">
+                <div id="people-to-collapse" class="row"></div>
+            </div>
+        </div>
+
+        <div class="collapse-button-p">
+            <a onclick="collapsePeople()" href="#"><i class="fas fa-angle-double-up"></i></a>
+        </div>
+    </section>
+
+    <!-- Seperater page -->
+    <section id="buffer-page" class="dark-bg">
+        <div class="top-line"></div>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 col-lg-5 buffer-text">
+                    <h2 class="white">Discover...</h2>
+                    <h2 class="red">Learn...</h2>
+                    <h2 class="white">Indulge...</h2>
+                </div>
+                <img class="d-none d-lg-block col-lg-7" src="assets/images/action.jpg"
+                    alt="Director using clapperboard" />
+            </div>
+        </div>
+    </section>
+
+    <!-- Trending section -->
+    <section id="trending-section" class="dark-bg">
+        <div class="top-line" id="trending-btn"></div>
+
+        <h2 class="heading">Trending</h2>
+
+        <h3 class="sub-heading red">Movies</h3>
+        <div class="flex">
+            <a id="movie-prev">
+                <i class="fas fa-caret-square-left scroll-arrow"></i>
+            </a>
+            <div class="trending-container">
+                <div id="trending-movies" class="row trending"></div>
+            </div>
+            <a id="movie-next">
+                <i class="fas fa-caret-square-right scroll-arrow"></i>
+            </a>
+        </div>
+
+        <div class="top-line"></div>
+        <h3 class="sub-heading red">Tv Shows</h3>
+        <div class="flex">
+            <a id="show-prev">
+                <i class="fas fa-caret-square-left scroll-arrow"></i>
+            </a>
+            <div class="trending-container">
+                <div id="trending-tv-shows" class="row trending"></div>
+            </div>
+            <a id="show-next">
+                <i class="fas fa-caret-square-right scroll-arrow"></i>
+            </a>
+        </div>
+
+        <div class="top-line"></div>
+        <h3 class="sub-heading red">People</h3>
+        <div class="flex">
+            <a id="people-prev">
+                <i class="fas fa-caret-square-left scroll-arrow"></i>
+            </a>
+            <div class="trending-container">
+                <div id="trending-people" class="row trending"></div>
+            </div>
+            <a id="people-next">
+                <i class="fas fa-caret-square-right scroll-arrow"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="container-fluid">
+        <h5>© 2020 Jonathan Howells</h5>
+    </footer>
+
+    <!-- Modal html for use across the webpage -->
+    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="ModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ModalTitle"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="assets/js/search.js"></script>
+    <script src="assets/js/trending.js"></script>
+</body>
+
 </html>

@@ -22,12 +22,14 @@ function getMovies(query) {
         `${movieApi.base}?s=${query}&apikey=${movieApi.key}`
     ) /* .getJSON method retrieves data from an external api */
         .then(function (response) {
-            let movies =
-                response.Search; /* the api is stored in arrays, here a new var is created to select the particular array needed */
-            let output = "";
-            /* for each of the responses in JSON output html to the webpage */
-            $.each(movies, function (index, movie) {
-                output += `
+            if (response.Response === "True") {
+                let movies =
+                    response.Search; /* the api is stored in arrays, here a new var is created to select the particular array needed */
+                let output = "";
+                console.log(movies);
+                /* for each of the responses in JSON output html to the webpage */
+                $.each(movies, function (index, movie) {
+                    output += `
                     <div class="col-md-4 col-lg-3">
                         <div class="search-card text-center">
                             <img src="${movie.Poster}"/>     
@@ -36,16 +38,17 @@ function getMovies(query) {
                         </div>
                     </div>
                 `;
-            });
+                });
 
-            /* outputs the html to the div with #movies-to-collapse */
-            $("#movies-to-collapse").html(output);
+                /* outputs the html to the div with #movies-to-collapse */
+                $("#movies-to-collapse").html(output);
 
-            $(".collapse-button-m").show();
+                $(".collapse-button-m").show();
+            } else {
+                alert("Movie not found! Please enter a valid movie title or word.")
+            }
+
         })
-        .catch(function (error) {
-            console.log(error);
-        });
 }
 
 function collapseMovies() {
@@ -134,10 +137,11 @@ function getPeople(query) {
         `${personApi.base}person?api_key=${personApi.key}&language=en-US&query=${query}&page=1&include_adult=false`
     )
         .then(function (response) {
-            let people = response.results;
-            let output = "";
-            $.each(people, function (index, person) {
-                output += `
+            if (response.page === 1) {
+                let people = response.results;
+                let output = "";
+                $.each(people, function (index, person) {
+                    output += `
                     <div class="col-md-4 col-lg-3">
                         <div class="search-card text-center">
                             <img src="https://image.tmdb.org/t/p/original${person.profile_path}"/>     
@@ -146,19 +150,20 @@ function getPeople(query) {
                         </div>
                     </div>
                 `;
-            });
+                });
 
-            $("#people-to-collapse").html(output);
+                $("#people-to-collapse").html(output);
 
-            $(".collapse-button-p").show();
+                $(".collapse-button-p").show();
+            } else if (response === "") {
+                alert("Person not found! Please enter a valid name.")
+            }
+
         })
-        .catch(function (error) {
-            console.log(error);
-        });
 }
 
 function collapsePeople() {
-    $("#people-to-collapse").slideToggle("slow", function () {}); // Slide toggle animation not working as intended. Too sharp
+    $("#people-to-collapse").slideToggle("slow", function () { }); // Slide toggle animation not working as intended. Too sharp
     $(".collapse-button-p").toggleClass("flip");
 }
 
@@ -247,11 +252,11 @@ jQuery(document).ready(function () {
         );
     });
 
-    var movieBtn = $(
+    var trendingBtn = $(
         "#to-trending-btn"
     ); /* a button that will scroll to a particular section on the website */
 
-    movieBtn.on("click", function (event) {
+    trendingBtn.on("click", function (event) {
         event.preventDefault();
         $("html, body").animate(
             {

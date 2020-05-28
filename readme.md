@@ -209,31 +209,7 @@ a valuable feature possibly.
 
 ## Testing
 
-Throughout my testing process as I was coding there were some different methods this project compared to my last one. I employed the use of jasmine which I learnt in a module covered by the [Code Institute](https://codeinstitute.net/) to test my javascript functions, along with simpler methods which I will outline below.
-
-### Simple Methods of testing
-
-While coding in all of my different functions and features I regularly performed small checks to make sure it was working as intended. For example:
-
-* Input / Search bars 
-    * Once in place, I created a function in jQuery to be able to retrieve the data the user has inputed and then console.log the value to the console so I can see that I can store the information and no errors are thrown up.
-    * Inputting things like numbers and special characters to check what is thrown back at me or logged to the console incase there is an issue with those characters. 
-    * Being able to store a variable of the users input and call it outside of the function.
-
-* Navbar and buttons
-    * Once the buttons and navbar had actual functions and jQuery functions to make them scroll to a different section of the page I religously clicked them, (sometimes as fasted as I could) to check if anything broke or if animations were causing issues. 
-    * Made sure all of the buttons went to the correct location on the page, i.e JMDb went to the top of the page, Movies went to the search bar for movies etc. 
-    * Tried the buttons consecutively in order, reverse and at random. Mostly to test what the animations did when I clicked on mid animation of another button. 
-
-* Responsiveness 
-    * Using dev tools within chrome, firefox, IE, edge and opera I loaded the page using the VS code extension [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) and rescaled the website corresponding to the different breakpoints of devices. Such as mobile small at 320px, mobile medium at 375px, mobile large at 425px and so forth. 
-    * I built the website with mobile first and then scaled it upwards towards dektop sizes finishing with 4k resolution. 
-    * At each breakpoint I made sure all of the buttons and search results were working and that none of the css styling was broken.
-    * Because different browsers can sometimes react differently to plugins and styling I took careful time at it worked in all of them, actually manually changing my code in places to make sure it worked throughout for each of the different platforms. 
-    * I repeated this process many times, after every major style change or feature was implemented into the project. 
-
-### Jasmine testing
-
+Throughout my testing process as I was coding there were some different methods this project compared to my last one. I employed the use of jasmine which I learnt in a module covered by the [Code Institute](https://codeinstitute.net/) to test my javascript functions, along with simpler methods which I will outline in another readme.md file called tests.md. [Please refer to this page to view my testing process](assets/tests/tests.md).
 
 
 ## Deployment
