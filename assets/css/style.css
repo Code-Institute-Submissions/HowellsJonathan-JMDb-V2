@@ -151,8 +151,10 @@ header {
     font-size: 1.5rem;
 }
 
-.form-control {
-    border-radius: 3rem;
+.form-control:focus {
+    background-color: #de4c4c;
+    border: 1px solid #080b0c;
+    transition: ease-in 0.3s;
 }
 
 .search-sect {
