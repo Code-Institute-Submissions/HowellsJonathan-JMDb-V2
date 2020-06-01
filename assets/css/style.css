@@ -62,6 +62,7 @@ nav {
 
 .navbar {
     max-height: 3em;
+    overflow-y: hidden;
 }
 
 .navbar-dark .navbar-brand {
@@ -408,18 +409,14 @@ footer h5 {
     }
 
     .item {
-        font-size: 1em;
         height: 520px;
+        font-size: 0.6em;
     }
 }
 
 @media only screen and (min-width: 1080px) {
     .intro-page {
         height: 60vh;
-    }
-
-    .item {
-        font-size: 0.6rem;
     }
 
     .trending-container {

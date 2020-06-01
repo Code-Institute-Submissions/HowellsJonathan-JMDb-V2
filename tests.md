@@ -21,9 +21,9 @@ While coding in all of my different functions and features I regularly performed
     * Because different browsers can sometimes react differently to plugins and styling I took careful time at it worked in all of them, actually manually changing my code in places to make sure it worked throughout for each of the different platforms. 
     * I repeated this process many times, after every major style change or feature was implemented into the project. 
 
-## Before Jasmine testing
+## After simple testing
 
-Before I tested anything using Jasmine there were a few simple steps I employed to make sure my tests would even begin to work. Similar to what I outlined above I would create a function like "getMovies" and then place a simple method inside like console.log("Hello"). This was to make sure everything was linked properly inside my html file and that I would get an outcome from the js file to the website console. While I knew I could also use Jasmine to check if this function worked I thought it was quicker and just as effective to use the method I did. 
+Similar to what I outlined above I would create a function like "getMovies" and then place a simple method inside like console.log("Hello"). This was to make sure everything was linked properly inside my html file and that I would get an outcome from the js file to the website console. While I knew I could also use Jasmine to check if this function worked I thought it was quicker and just as effective to use the method I did. 
 
 I repeated this method every time I created a function, but also when I was using a function to call an api I would use it again to make sure that I was able to pull from the api. For example I would call the api and then assign a variable to the output and log that to the console, such as: 
 
@@ -67,10 +67,6 @@ Another form of testing I completed was keeping error codes being logged to the 
 });
 
 To the end of functions, this then allowed me to catch errors when running the code or performing functions, therefore allowing me to test and re-develop the code to make sure no errors are thrown unsuspectingly. I could then code using defensive programming to make sure the user, if ever presented with an error knew why and how to correct what had happened. For example, entering an input into the search bars that doesn't produce a result (like gibberish or random amount of characters that isn't a movie or a person).
-
-
-## Jasmine Testing
-
 
 ## Online / automated tests
 

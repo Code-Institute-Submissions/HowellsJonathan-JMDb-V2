@@ -91,6 +91,20 @@ much. But that is probably due to my lacking skills in that software.
 * [Final Design on XD](https://xd.adobe.com/view/06d8047d-63f0-4a7c-69cb-015374699039-70e9/?fullscreen)
 * [Final Design on OneDrive](https://1drv.ms/u/s!Aqm-FZVAuH4j4ntOMO9LRlOM7D6H?e=D3U6jE)
 
+### Design Process and ideas
+
+After my first website and looking at a lot of other very well built and styled websites I wanted to create something very functional but smart and elegant looking at the same time. I drew a lot of inspiration from IMDb and how their site it tailored very specifically to the users needs. This gave me great insight to what a user would want when coming to my page. In my original designs I was favouring looks over function. For example I wanted a massive home page as soon as you landed on the page rather than being provided with a search bar and the functions you came to the site to use. I soon realised that this wasn't optimal and would create a bad UX design for anyone coming to the site. At first use it might be nice but if you came to the site every day it would soon become old and annoying, driving potential users away. Therefore we landed with a comprimise, still having a large home background design but allowing the user instantly to use the site without needing to scroll or navigate anywhere else on the page. 
+
+Another huge design choice was to create a scrolling website or a multi-page website. This was entirely based on my own preferences. I don't like to navigate through tens of pages to get to where I want, especially if I am on mobile, I always love the look and feel of a scrolling website. So I built one, it's as simple as that. 
+
+The color scheme was heavily based on a few things that I took into consideration. One being that red (although not the shade I chose) is the color associated with the worlds largest streaming platform, Netflix. You see red on the tv and I bet a large majority of people, even subconsciously think of Netflix. This would allow the user to associate the two together and provide a better user experience because of that. I also used this [website article](https://99designs.co.uk/blog/tips/branding-colors/) to do a little research on what colors mean and how the populace percieves them. The article states that red stands for: passion, excitement and anger. It can signify importance and command attention. Which I think is very true, so it helped me pick what sort of colors would fit best with the "brand" I was building. 
+
+### Changes during coding
+
+I had to make a few design adjustments during the coding process due to certain limitations or overall walls that I faced. This is why while the designs reflect a very similar
+outcome on the actual website it still has some differences. The main difference and possibly questionable design choice is the massive gaps the trending movie cards have inbetween the image, text and button. I originally wanted it to be tight and uniform with a lot of white space around the element, but due to an oversight in the design process (not taking into account that some movie titles are very large) the way I have achieved the uniform button at the bottom is by setting a set height on the card and using the attribute - 
+justify-content: space-between on the parent. This makes all of the children within the element spread out from eachother. This is also used in the navbar to achieve a similar effect. If I could change this I would, although I think spending hours possibly days changing every little styling to fit the desired outcome is overkill for this project. Of course if I was building a website for a client I would happily change and revamp the website to fit there needs, luckily I am the client in this instance. 
+
 ## Features
 
 ### Existing Features
@@ -227,7 +241,7 @@ before the last commitment. I tried to use atomic commits later into the project
 6. From there go to Github and select my current project
 7. Locate the settings and scroll down to Github Pages, select the master branch under source and wait for your website to go live
 
-There were no noticable differences between the deployed version of my project and the one I was working on in the code editor.
+There were no major differences between my deployed version and my local hosted version, apart from a few random scrolling elements which you could scroll on the Y axis. So to reprimand that I added some css styling: overflow-y: hidden; to the code which fixed the issue. 
 
 I ran my website locally to test the website using the extension [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) which imitates a real live version of my wesbite on my choosing of web browser.
 
