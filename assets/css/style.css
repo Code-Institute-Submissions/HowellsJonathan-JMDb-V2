@@ -60,6 +60,10 @@ nav {
     text-transform: uppercase;
 }
 
+.navbar {
+    max-height: 3em;
+}
+
 .navbar-dark .navbar-brand {
     color: #fff;
 }
@@ -104,7 +108,7 @@ nav {
 }
 
 header {
-    height: 40vh;
+    height: 45vh;
 }
 
 .home-background {
@@ -116,6 +120,7 @@ header {
     height: 100%;
     align-items: center;
     text-align: center;
+    padding-bottom: 1rem;
 }
 
 .d-flex {
@@ -123,22 +128,27 @@ header {
 }
 
 .home-text {
-    margin-top: 2em;
     background-color: rgba(0, 0, 0, 0.6);
     border-radius: 5%;
+    position: relative;
+    top: 33px;
 }
 
 .home-text h1 {
-    font-size: 4.4em;
+    font-size: 3em;
 }
 
 .home-text p {
     margin: 0;
-    font-size: 1.5em;
+    font-size: 1.1em;
     font-weight: 700;
 }
 
 /* Search for pages */
+
+.jumbotron h2 {
+    font-size: 1.5rem;
+}
 
 .form-control {
     border-radius: 3rem;
@@ -157,7 +167,15 @@ header {
 
 .search-card {
     font-weight: 700;
-    margin: 1.1em 0 1.1em 0;
+    padding: 1.1em 0 1.1em 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-card img {
+    height: 20rem;
 }
 
 .search-card h4,
@@ -174,6 +192,7 @@ header {
     text-decoration: none;
     border: 1px solid #de4c4c;
     padding: 0.5em 0.6em;
+    width: 80%;
 }
 
 .details-button:hover {
@@ -301,30 +320,58 @@ footer h5 {
     #buffer-page div h2 {
         font-size: 3.8rem;
     }
+
+    .home-text p {
+        font-size: 1.5em;
+    }
 }
 
 @media only screen and (min-width: 768px) {
     .home-text {
-        max-width: 30rem;
+        max-width: 500px;
         padding: 2rem;
     }
+
+    .home-text p {
+        font-size: 1.8em;
+    }
+
     #mainNav,
     .navbar-brand {
         font-size: 1.5em;
     }
-    #movies img,
-    #people img {
-        width: 13rem;
-    }
+
     .trending-container {
         margin: 0 2em 0 2em;
     }
+
     .item {
         font-size: 1em;
+        height: 650px;
     }
+
+    .slick-initialized .slick-slide {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
     .jumbotron {
-        width: 60%;
+        width: 80%;
         padding: 2rem 1rem 2rem 1rem;
+    }
+
+    .jumbotron h2 {
+        font-size: 2em;
+    }
+
+    .jumbotron input {
+        font-size: 1.3em;
+    }
+
+    .search-card {
+        min-height: 620px;
     }
 }
 
@@ -333,6 +380,10 @@ footer h5 {
         float: right;
         width: 100%;
         padding: 0;
+    }
+
+    .home-text p {
+        font-size: 1.4em;
     }
 
     .buffer-text {
@@ -355,21 +406,31 @@ footer h5 {
     .search-card {
         padding-bottom: 1rem;
     }
+
+    .item {
+        font-size: 1em;
+        height: 520px;
+    }
 }
 
 @media only screen and (min-width: 1080px) {
     .intro-page {
         height: 60vh;
     }
+
     .item {
         font-size: 0.6rem;
     }
+
     .trending-container {
         max-width: 70%;
     }
+
     .details-button {
-        font-size: 1.4em;
+        font-size: 1.3em;
+        margin-bottom: 5px;
     }
+
     .scroll-arrow {
         display: inline-block;
         font-size: 3rem;
@@ -377,8 +438,8 @@ footer h5 {
     }
 }
 
-@media only screen and (min-width: 1400px) {
-    .jumbotron {
-        max-width: 60%;
+@media only screen and (min-width: 1440px) {
+    .search-card img {
+        min-height: 350px;
     }
 }

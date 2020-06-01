@@ -22,18 +22,18 @@
             <a href="#" class="navbar-brand to-top-btn hvr-grow">JMDb</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
                 aria-controls="navbarResponsive">
-                <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
+                <span class="navbar-toggler-icon"><i role="button" class="fas fa-bars"></i></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarResponsive">
                 <ul class="navbar-nav">
                     <li>
-                        <a id="to-movie-btn" class="nav-link" href="#movie-search">Movies</a>
+                        <a role="button" id="to-movie-btn" class="nav-link" href="#movie-search">Movies</a>
                     </li>
                     <li>
-                        <a id="to-people-btn" class="nav-link" href="#actor-search">People</a>
+                        <a role="button" id="to-people-btn" class="nav-link" href="#actor-search">People</a>
                     </li>
                     <li>
-                        <a id="to-trending-btn" class="nav-link" href="#top-rated">Trending</a>
+                        <a role="button" id="to-trending-btn" class="nav-link" href="#top-rated">Trending</a>
                     </li>
                 </ul>
             </div>
@@ -59,11 +59,12 @@
 
         <div class="container">
             <div class="col-12 mx-auto jumbotron">
-                <h3 class="overflow-wrap">
+                <h2 class="overflow-wrap">
                     Search for any movie or Tv Show
-                </h3>
+                </h2>
                 <form id="movieSearchForm">
-                    <input type="text" class="form-control" id="movieSearchText" placeholder="Search..." />
+                    <input type="text" class="form-control" id="movieSearchText" placeholder="Search..."
+                        title="Movie Search bar" />
                 </form>
             </div>
         </div>
@@ -75,7 +76,7 @@
         </div>
 
         <div class="collapse-button-m">
-            <a onclick="collapseMovies()" href="#"><i class="fas fa-angle-double-up"></i></a>
+            <a onclick="collapseMovies()" href="#"><i role="button" class="fas fa-angle-double-up"></i></a>
         </div>
     </section>
 
@@ -85,11 +86,12 @@
 
         <div class="container">
             <div class="col-12 mx-auto jumbotron">
-                <h3 class="overflow-wrap">
+                <h2 class="overflow-wrap">
                     Search for an actor or actress
-                </h3>
+                </h2>
                 <form id="personSearchForm">
-                    <input type="text" class="form-control" id="personSearchText" placeholder="Search..." />
+                    <input type="text" class="form-control" id="personSearchText" placeholder="Search..."
+                        title="Actor or actress search bar" />
                 </form>
             </div>
         </div>
@@ -101,7 +103,7 @@
         </div>
 
         <div class="collapse-button-p">
-            <a onclick="collapsePeople()" href="#"><i class="fas fa-angle-double-up"></i></a>
+            <a onclick="collapsePeople()" href="#"><i role="button" class="fas fa-angle-double-up"></i></a>
         </div>
     </section>
 
@@ -131,13 +133,13 @@
         <h3 class="sub-heading red">Movies</h3>
         <div class="flex">
             <a id="movie-prev">
-                <i class="fas fa-caret-square-left scroll-arrow"></i>
+                <i role="button" class="fas fa-caret-square-left scroll-arrow"></i>
             </a>
             <div class="trending-container">
                 <div id="trending-movies" class="row trending"></div>
             </div>
             <a id="movie-next">
-                <i class="fas fa-caret-square-right scroll-arrow"></i>
+                <i role="button" class="fas fa-caret-square-right scroll-arrow"></i>
             </a>
         </div>
 
@@ -145,13 +147,13 @@
         <h3 class="sub-heading red">Tv Shows</h3>
         <div class="flex">
             <a id="show-prev">
-                <i class="fas fa-caret-square-left scroll-arrow"></i>
+                <i role="button" class="fas fa-caret-square-left scroll-arrow"></i>
             </a>
             <div class="trending-container">
                 <div id="trending-tv-shows" class="row trending"></div>
             </div>
             <a id="show-next">
-                <i class="fas fa-caret-square-right scroll-arrow"></i>
+                <i role="button" class="fas fa-caret-square-right scroll-arrow"></i>
             </a>
         </div>
 
@@ -159,13 +161,13 @@
         <h3 class="sub-heading red">People</h3>
         <div class="flex">
             <a id="people-prev">
-                <i class="fas fa-caret-square-left scroll-arrow"></i>
+                <i role="button" class="fas fa-caret-square-left scroll-arrow"></i>
             </a>
             <div class="trending-container">
                 <div id="trending-people" class="row trending"></div>
             </div>
             <a id="people-next">
-                <i class="fas fa-caret-square-right scroll-arrow"></i>
+                <i role="button" class="fas fa-caret-square-right scroll-arrow"></i>
             </a>
         </div>
     </section>

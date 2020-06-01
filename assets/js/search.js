@@ -30,7 +30,7 @@ function getMovies(query) {
                 /* for each of the responses in JSON output html to the webpage */
                 $.each(movies, function (index, movie) {
                     output += `
-                    <div class="col-md-4 col-lg-3">
+                    <div class="col-sm-6 col-md-4 col-lg-3">
                         <div class="search-card text-center">
                             <img src="${movie.Poster}"/>     
                             <h4 class="white" >${movie.Title}</h4>
