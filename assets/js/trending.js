@@ -58,7 +58,6 @@ $(document).ready(function () {
     $.getJSON(`${trendingApi.base}movie/week?api_key=${trendingApi.key}`).then(
         /* .getJSON method to call on the api and return data in JSON format */
         function (movieResponse) {
-            console.log(movieResponse);
             let trendingMovie =
                 movieResponse.results; /* These processes are very similar to the ones on search.js - create var to hold array data */
             let movieOutput = "";
@@ -126,7 +125,6 @@ $(document).ready(function () {
 
     $.getJSON(`${trendingApi.base}tv/week?api_key=${trendingApi.key}`).then(
         function (showResponse) {
-            console.log(showResponse);
             let trendingShow = showResponse.results;
             let showOutput = "";
 
@@ -188,7 +186,6 @@ $(document).ready(function () {
 
     $.getJSON(`${trendingApi.base}person/week?api_key=${trendingApi.key}`).then(
         function (personResponse) {
-            console.log(personResponse);
             let trendingPerson = personResponse.results;
             let personOutput = "";
 

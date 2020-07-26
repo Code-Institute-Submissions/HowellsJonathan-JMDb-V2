@@ -26,7 +26,6 @@ function getMovies(query) {
                 let movies =
                     response.Search; /* the api is stored in arrays, here a new var is created to select the particular array needed */
                 let output = "";
-                console.log(movies);
                 /* for each of the responses in JSON output html to the webpage */
                 $.each(movies, function (index, movie) {
                     output += `
@@ -110,9 +109,6 @@ function getMovie() {
                 </ul>
                 `);
         })
-        .catch(function (error) {
-            console.log(error);
-        });
 }
 
 /* People Searching Method 
@@ -155,11 +151,14 @@ function getPeople(query) {
                 $("#people-to-collapse").html(output);
 
                 $(".collapse-button-p").show();
-            } else if (response === "") {
-                alert("Person not found! Please enter a valid name.")
             }
-
         })
+    try {
+        if (query == "") throw "empty"
+    }
+    catch (error) {
+        alert("Input is " + error)
+    }
 }
 
 function collapsePeople() {
@@ -204,9 +203,6 @@ function getPerson() {
                 </ul>
                 `);
         })
-        .catch(function (error) {
-            console.log(error);
-        });
 }
 
 /* Buttons */
