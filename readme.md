@@ -225,6 +225,17 @@ a valuable feature possibly.
 
 Throughout my testing process as I was coding there were some different methods this project compared to my last one. I employed the use of jasmine which I learnt in a module covered by the [Code Institute](https://codeinstitute.net/) to test my javascript functions, along with simpler methods which I will outline in another readme.md file called tests.md. [Please refer to this page to view my testing process](assets/tests/tests.md).
 
+## Re-submission Changes
+
+After I got the results back for this project I had slipped up and failed to meet certain criteria due to allowing certain errors and code to reach the client side. In detail this was leaving console.log code
+in the JS files so that the client would recieve the JSON data from my API. I also had two different types of errors due to an oversight in my testing phase. 
+
+The first was a 404 error, this was due to within
+the API I was pulling images for the people search and all of the trending slideshows. But if the image path was null or empty then it would throw a 404 error (not found). To fix this I added an "if" statement 
+on each of the functions that checked if the JSON data was empty or null, then continued to run certain code, and if it was null or empty then it would break (return) out of the function, not performing the code.
+
+The second error was a 422 error (unprocessable) this is when the code knows it has to do something but it cannot perform what action it is programmed to do. This was happening due to my seach input not having 
+a buffer or break when someone entered nothing in the input e.g empty search. Therefore the program knew it had to process the input but couldn't due to nothing not being valid for the code to process. I got arround this by adding a if statement again to the function searchPeople. This checked if the users input was empty, if it was it alerted the client with invalid input, if it was valid it would continue onto anther function.
 
 ## Deployment
 
