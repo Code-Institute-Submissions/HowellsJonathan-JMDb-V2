@@ -120,13 +120,44 @@ const personApi = {
     personBase: "https://api.themoviedb.org/3/person/",
 };
 
-$(document).ready(function () {
-    $("#personSearchForm").on("submit", function (event) {
-        let query = $("#personSearchText").val();
+// $(document).ready(function () {
+//     $("#personSearchForm").on("submit", function (event) {
+//         let query = $("#personSearchText").val();
+//         getPeople(query);
+//         event.preventDefault();
+//     });
+// });
+
+$("#personSearchForm").submit(function () {
+    let emptyCheck = $("#personSearchText").val();
+    if (emptyCheck == "") {
+        alert("Please enter a valid input")
+    } else if (emptyCheck !== "") {
+        let query = emptyCheck;
         getPeople(query);
-        event.preventDefault();
-    });
-});
+    }
+})
+
+
+// function searchPeople() {
+//     $("#personSearchForm").on("submit", function (event) {
+//         let query = $("#personSearchText").val();
+//         getPeople(query);
+//         event.preventDefault();
+//     });
+// }
+
+// else {
+//     output += `
+//         <div class="col-md-4 col-lg-3">
+//             <div class="search-card text-center">
+//                 <img src="https://image.tmdb.org/t/p/original${person.profile_path}"/>     
+//                 <h4 class="white" >${person.name}</h4>
+//                 <a onclick="selectedPerson('${person.id}')" class="details-button hvr-shutter-out-horizontal red" href="#" data-toggle="modal" data-target="#modal">Details</a>
+//             </div>
+//         </div>
+//     `;
+// }
 
 function getPeople(query) {
     $.getJSON(
@@ -137,28 +168,27 @@ function getPeople(query) {
                 let people = response.results;
                 let output = "";
                 $.each(people, function (index, person) {
-                    output += `
-                    <div class="col-md-4 col-lg-3">
-                        <div class="search-card text-center">
-                            <img src="https://image.tmdb.org/t/p/original${person.profile_path}"/>     
-                            <h4 class="white" >${person.name}</h4>
-                            <a onclick="selectedPerson('${person.id}')" class="details-button hvr-shutter-out-horizontal red" href="#" data-toggle="modal" data-target="#modal">Details</a>
-                        </div>
-                    </div>
-                `;
-                });
+                    if (person.profile_path != null) { /* This if statement will prevent 404 errors due to the API pulling null JSON data for the image of each entity */
+                        output += `
+                            <div class="col-md-4 col-lg-3">
+                                <div class="search-card text-center">    
+                                    <img src="https://image.tmdb.org/t/p/original${person.profile_path}"/>  
+                                    <h4 class="white" >${person.name}</h4>
+                                    <a onclick="selectedPerson('${person.id}')" class="details-button hvr-shutter-out-horizontal red" href="#" data-toggle="modal" data-target="#modal">Details</a>
+                                </div>
+                            </div>
+                        `;
+                    } else {
+                        return
+                    }
+                }
+                );
 
                 $("#people-to-collapse").html(output);
 
                 $(".collapse-button-p").show();
             }
         })
-    try {
-        if (query == "") throw "empty"
-    }
-    catch (error) {
-        alert("Input is " + error)
-    }
 }
 
 function collapsePeople() {

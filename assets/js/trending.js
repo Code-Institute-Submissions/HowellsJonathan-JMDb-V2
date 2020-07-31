@@ -64,14 +64,17 @@ $(document).ready(function () {
 
             $.each(trendingMovie, function (index, movie) {
                 /* for each item inside of an array within the api perform below action */
-
-                movieOutput += `
-                    <div class="item">
-                        <img src="https://image.tmdb.org/t/p/original${movie.poster_path}" /> 
-                        <h4 class="white">${movie.title}</h4>
-                        <a onclick="tmdbSelectedMovie('${movie.id}')" class="details-button hvr-shutter-out-horizontal red" href="#" data-toggle="modal" data-target="#modal">Movie Details</a>
-                    </div>
-                `;
+                if (movie.poster_path != null) { /* This if statement will prevent 404 errors due to the API pulling null JSON data for the image of each entity */
+                    movieOutput += `
+                        <div class="item">
+                            <img src="https://image.tmdb.org/t/p/original${movie.poster_path}" /> 
+                            <h4 class="white">${movie.title}</h4>
+                            <a onclick="tmdbSelectedMovie('${movie.id}')" class="details-button hvr-shutter-out-horizontal red" href="#" data-toggle="modal" data-target="#modal">Movie Details</a>
+                        </div>
+                    `;
+                } else {
+                    return
+                }
             });
 
             $("#trending-movies").slick("slickAdd", movieOutput); // add's the movieOutput html to the slick.js container creating a new carousel
@@ -129,13 +132,17 @@ $(document).ready(function () {
             let showOutput = "";
 
             $.each(trendingShow, function (index, show) {
-                showOutput += `
-                    <div class="item">
-                        <img src="https://image.tmdb.org/t/p/original${show.poster_path}" />
-                        <h4 class="white">${show.name}</h4>
-                        <a onclick="tmdbSelectedShow('${show.id}')" class="details-button hvr-shutter-out-horizontal red" href="#" data-toggle="modal" data-target="#modal">Movie Details</a>
-                    </div>
-                `;
+                if (show.poster_path != null) {
+                    showOutput += `
+                        <div class="item">
+                            <img src="https://image.tmdb.org/t/p/original${show.poster_path}" />
+                            <h4 class="white">${show.name}</h4>
+                            <a onclick="tmdbSelectedShow('${show.id}')" class="details-button hvr-shutter-out-horizontal red" href="#" data-toggle="modal" data-target="#modal">Movie Details</a>
+                        </div>
+                    `;
+                } else {
+                    return
+                }
             });
 
             $("#trending-tv-shows").slick("slickAdd", showOutput);
@@ -190,13 +197,17 @@ $(document).ready(function () {
             let personOutput = "";
 
             $.each(trendingPerson, function (index, person) {
-                personOutput += `
-                    <div class="item">
-                        <img src="https://image.tmdb.org/t/p/original${person.profile_path}" />
-                        <h4 class="white">${person.name}</h4>
-                        <a onclick="selectedPerson('${person.id}')" class="details-button hvr-shutter-out-horizontal red" href="#" data-toggle="modal" data-target="#modal">Details</a>
-                    </div>
-                `;
+                if (person.profile_path != null) {
+                    personOutput += `
+                        <div class="item">
+                            <img src="https://image.tmdb.org/t/p/original${person.profile_path}" />
+                            <h4 class="white">${person.name}</h4>
+                            <a onclick="selectedPerson('${person.id}')" class="details-button hvr-shutter-out-horizontal red" href="#" data-toggle="modal" data-target="#modal">Details</a>
+                        </div>
+                    `;
+                } else {
+                    return
+                }
             });
 
             $("#trending-people").slick("slickAdd", personOutput);
